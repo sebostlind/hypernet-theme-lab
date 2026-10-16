@@ -6,3 +6,4 @@ Standalone theme playground mock (no app source).
 - v3: /v3/ (Surface & Light; contact sheet: /v3/shots/contact-sheet.png)
 - v4: /v4/ (Bears Den, Bears Den Night, LED Candy Pop, Asteroid Milk)
 - v5: /v5/ (Moon Signal, End of the Rainbow, polish; contact sheet: /v5/shots/contact-sheet.png)
+- v6: /v6/ (The Final Fig; contact sheet: /v6/shots/contact-sheet.png)
