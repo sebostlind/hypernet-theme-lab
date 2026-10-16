@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hypernet · Theme Lab v4</title>
+<title>Hypernet · Theme Lab v5</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
 /* ============ LAB SHELL (not themed) ============ */
@@ -210,8 +210,8 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
 /* ===== v4: Bears Den sound-wall kit ===== */
 #stage.den .main>*{position:relative;z-index:1}
 #stage.den .main::before,#stage.den .main::after{content:"";position:absolute;z-index:0;pointer-events:none}
-#stage.den .main::before{left:0;right:0;top:41%;height:12px;background:linear-gradient(#6a6a6a,#202020 40%,#000 62%,#3a3a3a)}
-#stage.den .main::after{top:0;bottom:0;left:calc(var(--gap) + 216px + var(--gap) / 2 - 6px);width:12px;background:linear-gradient(90deg,#6a6a6a,#202020 40%,#000 62%,#3a3a3a)}
+#stage.den .main::before{left:0;right:0;top:0;bottom:0;background:radial-gradient(circle,#777 0 3px,#111 4px 9px,transparent 10px) calc(var(--gap) + 216px + var(--gap) / 2 - 11px) calc(41% - 4px)/22px 22px no-repeat,radial-gradient(circle,#777 0 3px,#111 4px 9px,transparent 10px) calc(100% - 270px - var(--gap) * 1.5 - 11px) calc(41% - 4px)/22px 22px no-repeat,radial-gradient(circle,#777 0 3px,#111 4px 9px,transparent 10px) calc(100% - 270px - var(--gap) * 1.5 - 11px) calc(80% - 4px)/22px 22px no-repeat,linear-gradient(#7a7a7a,#262626 40%,#000 62%,#444) 0 41%/100% 14px no-repeat,linear-gradient(#7a7a7a,#262626 40%,#000 62%,#444) 0 80%/100% 14px no-repeat,linear-gradient(90deg,#7a7a7a,#262626 40%,#000 62%,#444) calc(100% - 270px - var(--gap) * 1.5 - 7px) 0/14px 100% no-repeat}
+#stage.den .main::after{top:0;bottom:0;left:calc(var(--gap) + 216px + var(--gap) / 2 - 7px);width:14px;background:linear-gradient(90deg,#6a6a6a,#202020 40%,#000 62%,#3a3a3a)}
 /* layered ply edge (light face ply, dark core, light ply) = end grain */
 #stage.den .surf{box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--surface2) 80%,#fff),inset 0 0 0 3px color-mix(in srgb,var(--line) 60%,#000),inset 0 0 0 5px color-mix(in srgb,var(--surface2) 70%,var(--line)),inset 0 0 0 6px color-mix(in srgb,var(--line) 50%,#000),var(--elev-x)}
 #stage.den .band{background:transparent}
@@ -226,7 +226,7 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
 #stage.den .btn.primary{border-radius:999px;background:var(--btn-gloss),var(--accent);color:var(--accent-ink);border:2px solid #111;padding-left:6px}
 #stage.den .btn.primary .ic{width:26px;height:26px;padding:6px;border-radius:50%;color:#fff;background:radial-gradient(circle,#5f86c4 0 16%,#0d0d0f 20% 52%,#2c2c30 56% 70%,#000 74%)}
 #stage.den .card .sq{border-radius:50%;box-shadow:inset 0 0 0 4px rgba(0,0,0,.55),inset 0 0 0 7px rgba(255,255,255,.08),inset 0 0 0 10px rgba(0,0,0,.35)}
-#stage.den aside.right .surf:first-child{background-image:var(--bear-l),var(--sheen-l),var(--spot-l),var(--mat-l);background-repeat:no-repeat,no-repeat,no-repeat,repeat;background-size:84px 84px,300% 100%,auto,var(--mat-size) var(--mat-size);background-position:right 10px bottom 10px,110% 0,0 0,0 0}
+#stage.den aside.right .surf:first-child{background-image:var(--bear-l),var(--sheen-l),var(--spot-l),var(--mat-l);background-repeat:no-repeat,no-repeat,no-repeat,repeat;background-size:110px 110px,300% 100%,auto,var(--mat-size) var(--mat-size);background-position:right 10px bottom 10px,110% 0,0 0,0 0}
 #stage.den .chip.on,#stage.den .seg button.on{background:#1c1c1c;color:#f2c81e}
 /* low-key bass thump */
 @keyframes thump{0%{transform:scale(1)}30%{transform:scale(1.018)}55%{transform:scale(.996)}100%{transform:scale(1)}}
@@ -235,7 +235,10 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
 
 /* ===== v4: LED Candy Pop — string lights ===== */
 #stage.leds .surf{position:relative}
-#stage.leds .titlebar::after,#stage.leds .surf::after{content:"";position:absolute;left:6px;right:6px;top:1px;height:12px;pointer-events:none;z-index:3;
+#stage.leds nav.side{padding-top:14px;position:relative!important}
+.ledstrip{display:none}
+#stage.leds .ledstrip{animation-delay:-1.3s}
+#stage.leds .titlebar::after,#stage.leds .surf::after,#stage.leds .ledstrip{content:"";display:block;position:absolute;left:6px;right:6px;top:1px;height:12px;pointer-events:none;z-index:3;
   background-image:radial-gradient(circle at 6px 6px,#ff4fb8 0 2px,rgba(255,79,184,.35) 3px,transparent 6px),radial-gradient(circle at 18px 7px,#7dff6a 0 2px,rgba(125,255,106,.35) 3px,transparent 6px),
   radial-gradient(circle at 30px 5px,#3ee6ff 0 2px,rgba(62,230,255,.35) 3px,transparent 6px),radial-gradient(circle at 42px 7px,#ff8a1f 0 2px,rgba(255,138,31,.35) 3px,transparent 6px),
   radial-gradient(circle at 54px 6px,#5d6bff 0 2px,rgba(93,107,255,.35) 3px,transparent 6px),radial-gradient(circle at 66px 5px,#ffd84a 0 2px,rgba(255,216,74,.35) 3px,transparent 6px),
@@ -245,12 +248,61 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
 #stage.leds .titlebar::after{top:auto;bottom:-6px}
 #stage.leds .surf:nth-child(2n)::after{background-position:-42px 0}
 @keyframes twinkle{0%,100%{opacity:1;filter:none}40%{opacity:.7;filter:hue-rotate(40deg)}70%{opacity:.9;filter:brightness(1.3)}}
-#stage.leds .titlebar::after,#stage.leds .surf::after{animation:twinkle 2.6s ease-in-out infinite}
+#stage.leds .titlebar::after,#stage.leds .surf::after,#stage.leds .ledstrip{animation:twinkle 2.6s ease-in-out infinite}
 #stage.leds .surf:nth-child(2)::after{animation-delay:-.9s}#stage.leds .surf:nth-child(3)::after{animation-delay:-1.7s}
 #stage.leds .btn:hover{box-shadow:0 0 12px rgba(255,43,214,.55),0 0 22px rgba(62,230,255,.25)}
 #stage.leds .head h1,#stage.leds .card h3{letter-spacing:.02em}
 #stage.leds .titlebar b{color:#ffd84a;text-shadow:0 0 8px rgba(255,216,74,.6)}
-@media (prefers-reduced-motion:reduce){#stage.leds .titlebar::after,#stage.leds .surf::after{animation:none!important}}
+@media (prefers-reduced-motion:reduce){#stage.leds .titlebar::after,#stage.leds .surf::after,#stage.leds .ledstrip{animation:none!important}}
+
+/* ===== v5 ===== */
+#stage.dark-theme .card.pale{filter:brightness(.8) saturate(.92)}
+/* Moon Signal: regolith band, dark window bezels, CRT phosphor headings */
+#stage.moon{background:radial-gradient(140% 40% at 30% 100%,#4a4c4f 0,#2b2d2f 45%,transparent 75%),linear-gradient(transparent 60%,rgba(70,72,75,.55) 80%,rgba(95,97,100,.7)),var(--bg)}
+#stage.moon .surf{box-shadow:0 0 0 7px #0b0c0d,0 0 0 8px #3b4045,0 18px 40px rgba(0,0,0,.6),var(--rim-x)}
+#stage.moon .titlebar{background:#030605;border-bottom:1px solid #1d2a2c}
+#stage.moon .titlebar b,#stage.moon .head h1,#stage.moon .band b,#stage.moon aside.right h4{color:#d8fbff;text-shadow:0 0 6px rgba(160,240,255,.55),0 0 16px rgba(120,220,255,.25)}
+#stage.moon .titlebar b{font-family:var(--font-display);font-size:15px}
+#stage.moon .head h1{font-size:calc(var(--fs) * 1.9)}
+#stage.moon .btn.primary{box-shadow:0 0 14px rgba(200,247,255,.45)}
+
+/* Moon Signal v5b: the centre panel is a CRT — thick pale lavender-grey plastic bezel, black-navy screen, static */
+#stage.moon .center.surf{border:0;border-radius:28px;
+  background:var(--spot-l),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E"),var(--laser-l,linear-gradient(transparent,transparent)),radial-gradient(120% 90% at 50% 45%,#0a1030 0,#04061a 60%,#010208);
+  background-size:auto,120px 120px,auto,auto;
+  box-shadow:0 0 0 3px #3c3b48,0 0 0 16px #b8b6c8,0 0 0 17px #8b899c,0 0 0 18px #d8d6e6,0 22px 50px rgba(0,0,0,.7),inset 0 0 40px rgba(0,0,0,.9),inset 0 0 0 2px #000}
+#stage.moon .main{padding:22px}
+#stage.moon .center .band{background:transparent}
+#stage.lasers{--laser-l:linear-gradient(118deg,transparent 0 30%,rgba(60,140,255,.0) 30.2%,rgba(70,150,255,.55) 30.6%,rgba(60,140,255,0) 31%,transparent 31.2%),
+  linear-gradient(62deg,transparent 0 55%,rgba(80,220,255,.45) 55.3%,transparent 55.7%),
+  linear-gradient(130deg,transparent 0 68%,rgba(40,90,255,.5) 68.4%,transparent 69%),
+  linear-gradient(105deg,transparent 0 12%,rgba(110,200,255,.35) 12.3%,transparent 12.7%),
+  linear-gradient(150deg,transparent 0 82%,rgba(70,160,255,.4) 82.3%,transparent 82.7%)}
+#stage.lasers .center.surf{animation:laserdrift 24s ease-in-out infinite alternate}
+@keyframes laserdrift{from{background-position:0 0,0 0,0 0,0 0}to{background-position:0 0,40px 30px,-60px 0,0 0}}
+#stage.moon .center .head h1{color:#fff;text-shadow:0 0 4px rgba(255,255,255,.7),0 0 18px rgba(90,170,255,.45)}
+@media (prefers-reduced-motion:reduce){#stage.lasers .center.surf{animation:none!important}}
+/* Asteroid Milk v5: puffy comic clouds along the bottom of the sky */
+#stage.comic{background:
+  radial-gradient(circle at 4% 104%,#e9e2cf 0 70px,#1c1a17 71px 73px,transparent 74px),
+  radial-gradient(circle at 11% 100%,#d7dce3 0 52px,#1c1a17 53px 55px,transparent 56px),
+  radial-gradient(circle at 88% 106%,#e9e2cf 0 90px,#1c1a17 91px 93px,transparent 94px),
+  radial-gradient(circle at 96% 98%,#cfd6df 0 60px,#1c1a17 61px 63px,transparent 64px),
+  radial-gradient(circle at 79% 104%,#d7dce3 0 46px,#1c1a17 47px 49px,transparent 50px),
+  radial-gradient(circle at 50% 108%,#e3dccb 0 60px,#1c1a17 61px 63px,transparent 64px),
+  var(--bg)}
+
+/* End of the Rainbow */
+#stage.rainbow{background:radial-gradient(18% 9% at 18% 16%,#fff 0 60%,transparent 62%),radial-gradient(12% 7% at 26% 13%,#fff 0 60%,transparent 62%),radial-gradient(20% 10% at 74% 22%,#fff 0 60%,transparent 62%),radial-gradient(13% 7% at 82% 18%,#fff 0 60%,transparent 62%),
+  radial-gradient(70% 22% at 20% 108%,#5cc46a 0 60%,transparent 61%),radial-gradient(70% 24% at 85% 110%,#3fae55 0 60%,transparent 61%),linear-gradient(#5ab8f5,#a8defd 70%,#d8f1ff)}
+#stage.rainbow .titlebar{background:linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,0) 45%,rgba(0,0,0,.08)),linear-gradient(#ff3b3b 0 20%,#ff9a1f 20% 40%,#ffd23f 40% 60%,#34c759 60% 80%,#2f80ed 80%);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.45);height:40px}
+#stage.rainbow .titlebar::after{content:"";position:absolute;left:0;right:0;bottom:-22px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='22'%3E%3Cpath d='M0 2 Q75 8 150 2' stroke='%23555' fill='none'/%3E%3Cpath d='M4 3h22l-11 17z' fill='%23ff3b3b'/%3E%3Cpath d='M34 5h22l-11 17z' fill='%23ff9a1f'/%3E%3Cpath d='M64 6h22l-11 16z' fill='%23ffd23f'/%3E%3Cpath d='M94 5h22l-11 17z' fill='%2334c759'/%3E%3Cpath d='M124 3h22l-11 17z' fill='%232f80ed'/%3E%3C/svg%3E") repeat-x;z-index:5;pointer-events:none}
+#stage.rainbow .titlebar{position:relative}
+#stage.rainbow .main{padding-top:26px}
+#stage.rainbow .surf{position:relative}
+#stage.rainbow .surf::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;border-radius:var(--radius) var(--radius) 0 0;pointer-events:none;z-index:2;
+  background:linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,0)),linear-gradient(90deg,#ff3b3b 0 20%,#ff9a1f 20% 40%,#ffd23f 40% 60%,#34c759 60% 80%,#2f80ed 80%)}
+#stage.rainbow .head h1{background:linear-gradient(90deg,#ff3b3b,#ff9a1f 22%,#e8b800 40%,#2fb24f 58%,#2f80ed 78%,#8e44ec);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(30,42,58,.25))}
 </style>
 </head>
 <body>
@@ -351,7 +403,7 @@ function build(){
   var n=NAV.map(function(x,i){return '<a href="#" class="'+(i?'':'on')+'">'+ic(x[0])+'<span>'+x[1]+'</span>'+(x[2]?'<span class="badge">'+x[2]+'</span>':'')+'</a>'}).join('')+
    '<div class="sep"></div><span class="lbl" style="padding:0 10px">Your horizons</span><a href="#">'+ic('camp')+'Burning Man 2026</a><a href="#">'+ic('horizon')+'Stockholm nights</a>'+
    '<div class="me"><div class="av">S</div><div><b>Sebastian</b><div class="lbl">online</div></div></div>';
-  $('#nav').innerHTML=n;
+  $('#nav').innerHTML='<i class="ledstrip"></i>'+n;
   var c=function(e){return '<article class="card" style="--ebg:'+e.bg+';--eink:'+e.ink+';--eac:'+e.ac+'"><div class="sq">'+e.g+'</div><div style="flex:1;min-width:0"><h3>'+e.t+'</h3><div class="meta">'+e.m+'</div>'+
     '<div class="who">'+e.w.map(function(w){return '<span class="av">'+w+'</span>'}).join('')+'<span class="meta" style="margin-left:12px">'+e.n+' going</span></div>'+
     '<div class="acts"><button class="btn going">'+ic('check',16)+'Going</button><button class="btn">'+ic('star',16)+'Interested</button><button class="btn ib">'+ic('share',16)+'</button><button class="btn ib">'+ic('chat',16)+'</button></div></div></article>'};
@@ -379,8 +431,8 @@ var DISPLAY_ONLY={
  "Display · serif & luxe":["Instrument Serif","Playfair Display","DM Serif Display","Bodoni Moda","Cormorant Garamond","Cinzel","Italiana","Abril Fatface"],
  "Display · bold & poster":["Syne","Unbounded","Righteous","Bungee","Big Shoulders Display","Limelight","Poiret One"],
  "Techno":["Orbitron","Audiowide","Michroma","Tektur","Major Mono Display"],
- "Pixel / retro":["VT323","Press Start 2P","Silkscreen","Pixelify Sans","DotGothic16"],
- "Comic":["Bangers","Bowlby One SC","Anton"],
+ "Pixel / retro":["Silkscreen","VT323","Press Start 2P","Pixelify Sans","DotGothic16"],
+ "Comic":["Bangers","Bowlby One SC","Anton","Bowlby One","Rubik Mono One"],
  "Stencil":["Stardos Stencil","Allerta Stencil","Big Shoulders Stencil","Saira Stencil One"],
  "Bubbly":["Bagel Fat One","Chewy","Sniglet"],
  "Handwritten":["Caveat","Pacifico","Dancing Script","Kalam","Permanent Marker"]
@@ -418,14 +470,14 @@ var SCHEMA=[
  ["Motion",[["dur","range","Duration",[0,600,10,"ms"]],["ease","select","Easing",["linear","ease","ease-out","cubic-bezier(.2,.8,.2,1)","cubic-bezier(.34,1.56,.64,1)","steps(3)"]],["lift","range","Hover lift",[0,4,1,"px"]],["typing","check","Typing effect"]]],
  ["Icons",[["stroke","range","Stroke width",[0.8,2.6,0.1,""]],["cap","select","Line cap",["square","round","butt"]]]],
  ["Interaction",[["cursor","select","Cursor",CURSORS],["selBg","color","Selection bg"],["selInk","color","Selection text"],["focus","color","Focus colour"],["focusW","range","Focus width",[1,4,1,"px"]],["focusStyle","select","Focus style",["solid","dotted","dashed"]],["scrollbar","select","Scrollbar",["win2k","thin","pill","terminal","square","chrome"]]]],
- ["Surface & Light",[["elev","range","Elevation",[0,5,1,""]],["bevel","range","Bevel",[0,1,0.05,""]],["material","select","Material",["none","brushed","leather","velvet","paper","carbon","plywood","halftone"]],["matOp","range","Material strength",[0,0.4,0.01,""]],["matTone","select","Material tone",["auto","light","dark"]],
+ ["Surface & Light",[["elev","range","Elevation",[0,5,1,""]],["bevel","range","Bevel",[0,1,0.05,""]],["material","select","Material",["none","brushed","leather","velvet","paper","carbon","plywood","halftone","pcb","crackle"]],["matOp","range","Material strength",[0,0.4,0.01,""]],["matTone","select","Material tone",["auto","light","dark"]],
    ["sheen","check","Sheen sweep (hover)"],["sheenA","range","Sheen strength",[0,0.25,0.01,""]],["spot","check","Pointer spotlight"],["spotColor","color","Spotlight colour"],["spotA","range","Spotlight strength",[0,0.35,0.01,""]],["spotSize","range","Spotlight size",[80,600,10,"px"]],
-   ["rim","range","Fresnel rim",[0,1,0.05,""]],["tilt","check","3D tilt (hovered card)"],["tiltMax","range","Tilt max",[0,8,0.5,"°"]],["holo","range","Holo foil (hover)",[0,0.5,0.01,""]],["ring","check","Conic ring (hover)"],["glossOn","check","Gloss on buttons"],["den","check","Sound-wall kit (scaffold, cones, bear)"],["thump","check","Bass thump hover"],["leds","check","String LEDs (twinkle)"]]],
+   ["rim","range","Fresnel rim",[0,1,0.05,""]],["tilt","check","3D tilt (hovered card)"],["tiltMax","range","Tilt max",[0,8,0.5,"°"]],["holo","range","Holo foil (hover)",[0,0.5,0.01,""]],["ring","check","Conic ring (hover)"],["glossOn","check","Gloss on buttons"],["den","check","Sound-wall kit (scaffold, cones, bear)"],["thump","check","Bass thump hover"],["leds","check","String LEDs (twinkle)"],["moon","check","Moon kit (regolith, bezel, CRT glow)"],["lasers","check","CRT laser beams (slow drift)"],["comic","check","Comic clouds along bottom"],["rainbow","check","Rainbow fabric + bunting"]]],
  ["Event looks",[["eventLook","select","Handling",["as-is","tinted","overridden"]],["tint","range","Tint amount",[0,100,5,"%"]]]]
 ];
 
 /* ---------- presets ---------- */
-var BASE={leds:false,den:false,thump:false,hs:1,elev:0,bevel:0,material:"none",matOp:0.12,matTone:"auto",sheen:false,sheenA:0.12,spot:false,spotColor:"#ffffff",spotA:0.12,spotSize:260,rim:0,tilt:false,tiltMax:6,holo:0,ring:false,glossOn:false,chromeOn:false,chrome1:"#f5f5f5",chrome2:"#9a9a9a",chrome3:"#6b6b6b",titlebar:"accent",fs:14,weight:400,displayWeight:700,tracking:0,upper:false,upperBtn:false,upperDisplay:false,radius:0,pill:false,avatarRound:false,borderW:1,borderStyle:"solid",gap:8,ctl:36,depth:"flat",shadow:0.3,glow:0,highlight:0,textGlow:0,glass:false,blur:0,opacity:1,saturate:100,blobs:false,blob1:"#000000",blob2:"#000000",blob3:"#000000",pattern:"none",patColor:"#000000",patOp:0.1,patSize:24,grain:0,scan:0,scanSize:2,vig:0,embers:false,flicker:false,dur:180,ease:"ease-out",lift:0,typing:false,stroke:1.7,cap:"square",cursor:"default",selBg:"#262626",selInk:"#ffffff",focus:"#000000",focusW:2,focusStyle:"solid",scrollbar:"thin",eventLook:"as-is",tint:35,
+var BASE={rainbow:false,lasers:false,comic:false,moon:false,leds:false,den:false,thump:false,hs:1,elev:0,bevel:0,material:"none",matOp:0.12,matTone:"auto",sheen:false,sheenA:0.12,spot:false,spotColor:"#ffffff",spotA:0.12,spotSize:260,rim:0,tilt:false,tiltMax:6,holo:0,ring:false,glossOn:false,chromeOn:false,chrome1:"#f5f5f5",chrome2:"#9a9a9a",chrome3:"#6b6b6b",titlebar:"accent",fs:14,weight:400,displayWeight:700,tracking:0,upper:false,upperBtn:false,upperDisplay:false,radius:0,pill:false,avatarRound:false,borderW:1,borderStyle:"solid",gap:8,ctl:36,depth:"flat",shadow:0.3,glow:0,highlight:0,textGlow:0,glass:false,blur:0,opacity:1,saturate:100,blobs:false,blob1:"#000000",blob2:"#000000",blob3:"#000000",pattern:"none",patColor:"#000000",patOp:0.1,patSize:24,grain:0,scan:0,scanSize:2,vig:0,embers:false,flicker:false,dur:180,ease:"ease-out",lift:0,typing:false,stroke:1.7,cap:"square",cursor:"default",selBg:"#262626",selInk:"#ffffff",focus:"#000000",focusW:2,focusStyle:"solid",scrollbar:"thin",eventLook:"as-is",tint:35,
   bg:"#d4d0c8",surface:"#d4d0c8",surface2:"#e8e5df",line:"#c9c5bc",text:"#141414",muted:"#666666",accent:"#262626",accentInk:"#ffffff",sel:"#262626",selText:"#ffffff",fontUI:"Tahoma",fontDisplay:"Tahoma"};
 var PRESETS={
  "Win2k (current)":{elev:0,family:"Classic",titlebar:"win2k",depth:"bevel",borderW:0,shadow:0.2,dur:0,focus:"#000000",focusW:1,focusStyle:"dotted",scrollbar:"win2k",gap:6},
@@ -453,10 +505,12 @@ var PRESETS={
  "Tuxhole Speakeasy":{material:"velvet",matOp:0.22,matTone:"dark",spot:true,spotColor:"#c9a24a",spotA:0.12,spotSize:260,sheen:true,sheenA:0.07,elev:2,family:"Tuxhole",bg:"#1a0a0c",surface:"#13080a",surface2:"#2a0f14",line:"#6b4f25",text:"#f3e6cc",muted:"#bfa37b",accent:"#c9a24a",accentInk:"#1a0a0c",sel:"#5a121c",selText:"#f3e6cc",titlebar:"surface",fontUI:"Lora",fontDisplay:"Playfair Display",displayWeight:600,upper:true,tracking:0.005,radius:2,depth:"soft",shadow:0.5,highlight:0.04,pattern:"velvet",patColor:"#7a0e1c",patOp:0.55,patSize:8,vig:0.5,grain:0.05,dur:350,ease:"ease",stroke:1.3,cap:"round",cursor:"default",scrollbar:"pill",selBg:"#c9a24a",selInk:"#1a0a0c",focus:"#c9a24a",gap:10},
  "Tuxhole Boudoir":{material:"velvet",matOp:0.3,matTone:"dark",spot:true,spotColor:"#ff6f8f",spotA:0.15,spotSize:300,sheen:true,sheenA:0.09,elev:3,rim:0.25,family:"Tuxhole",bg:"#3a0611",surface:"#4a0816",surface2:"#640c20",line:"#d4a64a",text:"#fff0e6",muted:"#eab3b3",accent:"#f2c14e",accentInk:"#2a0309",sel:"#7a0e24",selText:"#fff0e6",titlebar:"accent",fontUI:"Crimson Pro",fontDisplay:"Bodoni Moda",weight:500,displayWeight:700,fs:16,radius:16,pill:true,avatarRound:true,borderW:3,borderStyle:"double",depth:"soft",shadow:0.6,glow:12,highlight:0.15,pattern:"velvet",patColor:"#1a0006",patOp:0.6,patSize:10,vig:0.45,dur:400,ease:"cubic-bezier(.34,1.56,.64,1)",lift:2,stroke:1.6,cap:"round",cursor:"heart",scrollbar:"pill",selBg:"#f2c14e",selInk:"#2a0309",focus:"#f2c14e",gap:12},
 
- "Bears Den":{den:true,thump:true,material:"plywood",matOp:0.16,matTone:"dark",elev:1,spot:true,spotColor:"#fff6d8",spotA:0.14,spotSize:320,family:"Bears Den",bg:"#6b5038",surface:"#f3dfb8",surface2:"#ead09c",line:"#b98552",text:"#24170b",muted:"#5a3a1c",accent:"#f2c81e",accentInk:"#1a1208",sel:"#1c1c1c",selText:"#f2c81e",titlebar:"scaffold",fontUI:"Barlow",fontDisplay:"Stardos Stencil",weight:500,displayWeight:700,upperDisplay:true,tracking:0.005,radius:2,borderW:0,depth:"flat",dur:160,ease:"ease-out",stroke:1.8,cap:"butt",cursor:"default",scrollbar:"square",selBg:"#f2c81e",selInk:"#1a1208",focus:"#1c1c1c",gap:8},
- "Bears Den Night":{den:true,thump:true,material:"plywood",matOp:0.08,matTone:"light",elev:2,spot:true,spotColor:"#ffb85c",spotA:0.2,spotSize:380,family:"Bears Den",bg:"#0e0905",surface:"#4b3220",surface2:"#5b3e27",line:"#2a1a0e",text:"#f7e8d0",muted:"#cfae86",accent:"#f2c81e",accentInk:"#1a1208",sel:"#f2c81e",selText:"#1a1208",titlebar:"scaffold",fontUI:"Barlow",fontDisplay:"Stardos Stencil",weight:500,displayWeight:700,upperDisplay:true,radius:2,borderW:0,depth:"flat",vig:0.45,grain:0.04,dur:160,ease:"ease-out",stroke:1.8,cap:"butt",cursor:"default",scrollbar:"square",selBg:"#f2c81e",selInk:"#1a1208",focus:"#f2c81e",gap:8},
+ "Bears Den":{den:true,thump:true,material:"plywood",matOp:0.16,matTone:"dark",elev:1,spot:true,spotColor:"#fff6d8",spotA:0.14,spotSize:320,family:"Bears Den",bg:"#6b5038",surface:"#f3dfb8",surface2:"#ead09c",line:"#b98552",text:"#24170b",muted:"#5a3a1c",accent:"#f2c81e",accentInk:"#1a1208",sel:"#1c1c1c",selText:"#f2c81e",titlebar:"scaffold",fontUI:"Barlow",fontDisplay:"Stardos Stencil",weight:500,displayWeight:700,upperDisplay:true,tracking:0.005,radius:2,borderW:0,depth:"flat",dur:160,ease:"ease-out",stroke:1.8,cap:"butt",cursor:"default",scrollbar:"square",selBg:"#f2c81e",selInk:"#1a1208",focus:"#1c1c1c",gap:16},
+ "Bears Den Night":{den:true,thump:true,material:"plywood",matOp:0.08,matTone:"light",elev:2,spot:true,spotColor:"#ffb85c",spotA:0.2,spotSize:380,family:"Bears Den",bg:"#0e0905",surface:"#4b3220",surface2:"#5b3e27",line:"#2a1a0e",text:"#f7e8d0",muted:"#cfae86",accent:"#f2c81e",accentInk:"#1a1208",sel:"#f2c81e",selText:"#1a1208",titlebar:"scaffold",fontUI:"Barlow",fontDisplay:"Stardos Stencil",weight:500,displayWeight:700,upperDisplay:true,radius:2,borderW:0,depth:"flat",vig:0.45,grain:0.04,dur:160,ease:"ease-out",stroke:1.8,cap:"butt",cursor:"default",scrollbar:"square",selBg:"#f2c81e",selInk:"#1a1208",focus:"#f2c81e",gap:16},
  "LED Candy Pop":{family:"LED Candy Pop",leds:true,bg:"#0b0716",surface:"#f3ebd6",surface2:"#e6dcc2",line:"#b9a7d6",text:"#251c33",muted:"#5b4d6e",accent:"#ff2bd6",accentInk:"#ffffff",sel:"#2a1f45",selText:"#7dfcff",titlebar:"ink",fontUI:"Nunito",fontDisplay:"Permanent Marker",weight:600,displayWeight:400,radius:8,avatarRound:true,pill:true,borderW:1,depth:"glow",shadow:0.4,glow:14,blobs:true,blob1:"#7b5cff",blob2:"#19c3b0",blob3:"#c13cff",grain:0.07,vig:0.4,material:"paper",matOp:0.08,matTone:"dark",bevel:0.25,elev:2,rim:0.2,spot:true,spotColor:"#c9a8ff",spotA:0.14,spotSize:280,dur:220,ease:"cubic-bezier(.34,1.56,.64,1)",lift:2,stroke:1.8,cap:"round",cursor:"sparkle",scrollbar:"pill",selBg:"#ff2bd6",selInk:"#ffffff",focus:"#ff2bd6",focusW:2,gap:14},
- "Asteroid Milk":{family:"Asteroid Milk",bg:"#0b0b0d",surface:"#efe6d2",surface2:"#e4d8bd",line:"#1c1a17",text:"#1c1a17",muted:"#5a5246",accent:"#e8b23a",accentInk:"#1c1a17",sel:"#1c1a17",selText:"#efe6d2",titlebar:"accent",fontUI:"Space Grotesk",fontDisplay:"Bangers",weight:500,displayWeight:400,upperDisplay:true,tracking:0.005,hs:1.15,radius:10,avatarRound:true,pill:true,borderW:2,depth:"offset",shadow:1,pattern:"stars",patColor:"#ffffff",patOp:0.85,patSize:140,grain:0.06,material:"halftone",matOp:0.07,matTone:"dark",dur:140,ease:"ease-out",lift:1,stroke:2,cap:"round",cursor:"default",scrollbar:"square",selBg:"#e8b23a",selInk:"#1c1a17",focus:"#e8b23a",focusW:3,gap:12},
+ "Asteroid Milk":{family:"Asteroid Milk",bg:"#0b0b0d",surface:"#efe6d2",surface2:"#e4d8bd",line:"#1c1a17",text:"#1c1a17",muted:"#5a5246",accent:"#e8b23a",accentInk:"#1c1a17",sel:"#1c1a17",selText:"#efe6d2",titlebar:"accent",fontUI:"Space Grotesk",fontDisplay:"Bangers",weight:500,displayWeight:400,upperDisplay:true,tracking:0.005,hs:1.15,radius:10,avatarRound:true,pill:true,borderW:2,depth:"offset",shadow:1,comic:true,pattern:"stars",patColor:"#ffffff",patOp:0.85,patSize:140,grain:0.06,material:"crackle",matOp:0.16,matTone:"dark",dur:140,ease:"ease-out",lift:1,stroke:2,cap:"round",cursor:"default",scrollbar:"square",selBg:"#e8b23a",selInk:"#1c1a17",focus:"#e8b23a",focusW:3,gap:12},
+ "Moon Signal":{family:"Moon Signal",moon:true,bg:"#040506",surface:"#dce9f0",surface2:"#1a2126",line:"#cfe9ff",text:"#e8f3f6",muted:"#9fb3ba",accent:"#c8f7ff",accentInk:"#031014",sel:"#c8f7ff",selText:"#031014",titlebar:"ink",lasers:true,fontUI:"IBM Plex Mono",fontDisplay:"Silkscreen",weight:400,displayWeight:400,upperDisplay:true,hs:1.25,radius:22,avatarRound:true,pill:true,borderW:1,depth:"soft",shadow:0.6,glow:10,highlight:0.25,glass:true,blur:6,opacity:0.07,saturate:100,pattern:"stars",patColor:"#ffffff",patOp:0.8,patSize:160,grain:0.06,material:"pcb",matOp:0.09,matTone:"light",rim:0.55,elev:2,spot:true,spotColor:"#c8f7ff",spotA:0.08,spotSize:260,textGlow:0,dur:200,ease:"cubic-bezier(.2,.8,.2,1)",lift:1,stroke:1.5,cap:"round",cursor:"crosshair",scrollbar:"thin",selBg:"#c8f7ff",selInk:"#031014",focus:"#c8f7ff",gap:16},
+ "End of the Rainbow":{family:"End of the Rainbow",rainbow:true,bg:"#8fd3ff",surface:"#ffffff",surface2:"#eef7ff",line:"#cfe3f5",text:"#1e2a3a",muted:"#56657a",accent:"#ff4d6d",accentInk:"#ffffff",sel:"#2f80ed",selText:"#ffffff",titlebar:"surface",fontUI:"Nunito",fontDisplay:"Bowlby One",weight:600,displayWeight:400,hs:1.2,radius:20,pill:true,avatarRound:true,borderW:0,depth:"soft",shadow:0.18,highlight:0.6,elev:2,dur:240,ease:"cubic-bezier(.34,1.56,.64,1)",lift:2,stroke:2,cap:"round",cursor:"default",scrollbar:"pill",selBg:"#ffd23f",selInk:"#1e2a3a",focus:"#2f80ed",gap:14},
  "Orderland Gov":{elev:0,family:"Orderland",bg:"#f3f2f1",surface:"#ffffff",surface2:"#f3f2f1",line:"#b1b4b6",text:"#0b0c0c",muted:"#505a5f",accent:"#1d70b8",accentInk:"#ffffff",sel:"#1d70b8",selText:"#ffffff",titlebar:"ink",fontUI:"Public Sans",fontDisplay:"Public Sans",fs:15,displayWeight:700,radius:0,depth:"flat",dur:0,ease:"linear",stroke:2,cap:"round",cursor:"default",scrollbar:"thin",selBg:"#ffdd00",selInk:"#0b0c0c",focus:"#ffdd00",focusW:3,gap:12,ctl:40},
  "Orderland Finance":{elev:0,family:"Orderland",bg:"#000000",surface:"#070707",surface2:"#121212",line:"#2b2b2b",text:"#ffa028",muted:"#b98048",accent:"#ffa028",accentInk:"#000000",sel:"#1f3a5f",selText:"#ffffff",titlebar:"accent",fontUI:"Roboto Mono",fontDisplay:"Roboto Mono",fs:13,displayWeight:700,upper:true,upperBtn:true,upperDisplay:true,radius:0,depth:"flat",pattern:"grid",patColor:"#ffa028",patOp:0.035,patSize:20,dur:0,ease:"linear",stroke:1.5,cap:"butt",cursor:"crosshair",scrollbar:"square",selBg:"#4aa3ff",selInk:"#000000",focus:"#4aa3ff",gap:2,ctl:28}
 };
@@ -541,7 +595,7 @@ function tokens(t){
   k['--sb-w']=sb[0];k['--sb-track']=sb[1];k['--sb-thumb']=sb[2];k['--sb-radius']=sb[3];k['--sb-thumb-shadow']=sb[4];k['--sb-gap']=sb[5];
   k['--tint']=t.tint+'%';
   k['--hs']=t.hs;
-  k['--bear-l']='url("data:image/svg+xml,'+encodeURIComponent(BEAR(84,'#e8b800').replace('fill-opacity=".85"','fill-opacity="0"'))+'")';
+  k['--bear-l']='url("data:image/svg+xml,'+encodeURIComponent(BEAR(110,'rgba(214,160,0,0.2)').replace('fill-opacity=".85"','fill-opacity="0"'))+'")';
   var e=t.elev||0;k['--elev-x']=e?'0 '+(e*2)+'px '+(e*6)+'px rgba(0,0,0,'+(0.06*e).toFixed(2)+')':'0 0 0 transparent';
   var b=t.bevel||0;k['--bevel-x']=b?'inset 1px 1px 0 rgba(255,255,255,'+(b*.6).toFixed(2)+'), inset -1px -1px 0 rgba(0,0,0,'+(b*.5).toFixed(2)+')':'0 0 0 transparent';
   var r=t.rim||0;k['--rim-x']=r?'inset 0 1px 0 rgba(255,255,255,'+(r*.55).toFixed(2)+'), inset 0 0 0 1px rgba(255,255,255,'+(r*.12).toFixed(2)+'), inset 0 0 18px rgba(255,255,255,'+(r*.08).toFixed(2)+')':'0 0 0 transparent';
@@ -555,7 +609,7 @@ function tokens(t){
 /* cached material tiles: generated once per material+tone on a tiny canvas, reused as a data URL */
 var TILE_CACHE={};
 /* spray-stencil bear face (bridges left in the cut, like a real stencil) */
-function BEAR(sz,col){col=col||'currentColor';return '<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 40 40" fill="'+col+'"><circle cx="9" cy="9" r="6"/><circle cx="31" cy="9" r="6"/><path d="M20 6c9 0 15 6 15 15s-6 15-15 15S5 30 5 21 11 6 20 6z"/><g fill="#000" fill-opacity=".85"><circle cx="14" cy="18" r="2.4"/><circle cx="26" cy="18" r="2.4"/><path d="M14.5 25c0-2.5 2.5-4 5.5-4s5.5 1.5 5.5 4-2.5 5-5.5 5-5.5-2.5-5.5-5z"/></g><path d="M19.2 21h1.6v9h-1.6z"/><circle cx="20" cy="24" r="1.5" fill="#000"/></svg>';}
+function BEAR(sz,col){col=col||'currentColor';return '<svg xmlns="http://www.w3.org/2000/svg" width="'+sz+'" height="'+sz+'" viewBox="0 0 40 40" fill="'+col+'"><circle cx="9" cy="9" r="6"/><circle cx="31" cy="9" r="6"/><path d="M20 6c9 0 15 6 15 15s-6 15-15 15S5 30 5 21 11 6 20 6z"/><g fill="#000" fill-opacity=".85"><circle cx="14" cy="18" r="2.4"/><circle cx="26" cy="18" r="2.4"/><path d="M14.5 25c0-2.5 2.5-4 5.5-4s5.5 1.5 5.5 4-2.5 5-5.5 5-5.5-2.5-5.5-5z"/></g><path d="M19.2 21h1.6v9h-1.6z"/><circle cx="20" cy="24" r="1.5" fill="#000"/></svg>';}
 function lum(h){var n=parseInt(h.slice(1),16);return (0.299*(n>>16&255)+0.587*(n>>8&255)+0.114*(n&255))/255;}
 function matTile(t){
   if(!t.material||t.material==='none'||!t.matOp)return null;
@@ -569,6 +623,13 @@ function matTile(t){
   else if(t.material==='velvet'){for(var X=0;X<S;X++){var a=(Math.sin(X/S*Math.PI*6)*.5+.5)*A;x.fillStyle='rgba('+col+','+a.toFixed(3)+')';x.fillRect(X,0,1,S);}
     for(var i2=0;i2<3000;i2++){x.fillStyle='rgba('+col+','+(R()*A*.6).toFixed(3)+')';x.fillRect(R()*S,R()*S,1,2+R()*4);}}
   else if(t.material==='paper'){var id2=x.createImageData(S,S);for(var j2=0;j2<id2.data.length;j2+=4){var w=tone==='light'?255:0;id2.data[j2]=id2.data[j2+1]=id2.data[j2+2]=w;id2.data[j2+3]=R()*A*255;}x.putImageData(id2,0,0);}
+  else if(t.material==='crackle'){x.strokeStyle='rgba('+col+','+A+')';x.lineCap='round';
+    function br(px,py,ang,len,w,d){if(d>5||len<4)return;var nx=px+Math.cos(ang)*len,ny=py+Math.sin(ang)*len;x.lineWidth=w;x.beginPath();x.moveTo(px,py);x.quadraticCurveTo((px+nx)/2+(R()-.5)*8,(py+ny)/2+(R()-.5)*8,nx,ny);x.stroke();
+      br(nx,ny,ang+(R()-.5)*1.2,len*(.6+R()*.3),w*.75,d+1);if(R()<.55)br(nx,ny,ang+(R()<.5?1:-1)*(.6+R()*.8),len*.5,w*.6,d+1);}
+    for(var cr=0;cr<5;cr++)br(R()*S,R()*S,R()*6.283,18+R()*24,1.4,0);}
+  else if(t.material==='pcb'){x.strokeStyle='rgba('+col+','+A+')';x.fillStyle='rgba('+col+','+A+')';x.lineWidth=1.2;
+    for(var tr=0;tr<14;tr++){var px2=Math.round(R()*16)*8,py2=Math.round(R()*16)*8;x.beginPath();x.moveTo(px2,py2);for(var sg=0;sg<4;sg++){var d=R();if(d<.4)px2+=Math.round(R()*5+1)*8;else if(d<.8)py2+=Math.round(R()*5+1)*8;else{px2+=24;py2+=24;}x.lineTo(px2,py2);}x.stroke();x.beginPath();x.arc(px2,py2,2.6,0,6.283);x.fill();}
+    for(var ch=0;ch<2;ch++){var cx2=R()*96,cy2=R()*96;x.strokeRect(cx2,cy2,22,14);for(var pn=0;pn<5;pn++){x.fillRect(cx2+2+pn*4,cy2-3,2,3);x.fillRect(cx2+2+pn*4,cy2+14,2,3);}}}
   else if(t.material==='halftone'){for(var hy=0;hy<S;hy+=6)for(var hx=(hy/6%2)*3;hx<S;hx+=6){var hr=.6+ (Math.sin(hx/S*6.283)*.5+.5)*1.2;x.beginPath();x.arc(hx,hy,hr,0,6.283);x.fillStyle='rgba('+col+','+A+')';x.fill();}}
   else if(t.material==='plywood'){var gc=tone==='light'?'255,225,180':'105,62,25';
     for(var gl=0;gl<46;gl++){var y0=R()*S,amp=.6+R()*2.4,fq=1+Math.floor(R()*2),ph=R()*6.28;x.beginPath();
@@ -609,7 +670,8 @@ function apply(){
   st.classList.toggle('embers',!!T.embers&&!reduced);
   st.classList.toggle('embers-static',!!T.embers&&reduced);
   st.classList.toggle('textglow',T.textGlow>0);
-  st.classList.toggle('den',!!T.den);st.classList.toggle('leds',!!T.leds);st.classList.toggle('thump-on',!!T.thump&&!reduced);
+  st.classList.toggle('den',!!T.den);st.classList.toggle('moon',!!T.moon);st.classList.toggle('lasers',!!T.lasers);st.classList.toggle('comic',!!T.comic);st.classList.toggle('rainbow',!!T.rainbow);
+  var darkT=T.glass&&T.opacity<.3?lum(T.bg)<.35:lum(T.surface)<.35;st.classList.toggle('dark-theme',darkT);document.querySelectorAll('.card').forEach(function(c){var b=c.style.getPropertyValue('--ebg').trim();c.classList.toggle('pale',/^#/.test(b)&&lum(b)>.72);});st.classList.toggle('leds',!!T.leds);st.classList.toggle('thump-on',!!T.thump&&!reduced);
   $('#logo').innerHTML=T.den?BEAR(16):'<svg width="16" height="16" viewBox="0 0 32 32"><path d="M16 4 28 16 16 28 4 16z" fill="currentColor"/></svg>';
   st.classList.toggle('sheen-on',!!T.sheen&&!reduced);st.classList.toggle('holo-on',T.holo>0&&!reduced);st.classList.toggle('ring-on',!!T.ring&&!reduced);
   st.classList.toggle('typing',!!T.typing&&!reduced);
