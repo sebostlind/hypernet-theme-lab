@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hypernet · Theme Lab v7</title>
+<title>Hypernet · Theme Lab v8</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
 /* ============ LAB SHELL (not themed) ============ */
@@ -315,6 +315,38 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
 #stage.fig .titlebar b,#stage.fig .head h1{color:#a87a12;text-shadow:0 0 10px rgba(255,214,110,.55)}
 #stage.fig .btn:hover,#stage.fig .card:hover{box-shadow:0 0 16px rgba(240,196,90,.55),var(--elev-out)}
 #stage.fig nav.side a.on{box-shadow:inset 0 0 0 1px #c9a54a}
+
+/* Optical Bench: smoked acrylic, frosted L-brackets, rivets, etched diagram */
+#stage.ital .disp,#stage.ital .card h3,#stage.ital .band b,#stage.ital aside.right h4,#stage.ital .titlebar b,#stage.ital .dlg .dh b{font-style:italic}
+#stage.optic{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 700' preserveAspectRatio='xMidYMid slice' fill='none' stroke='%23ffffff' stroke-width='1.2'%3E%3Cpath d='M80 90 L930 560' stroke-dasharray='2 7'/%3E%3Cpath d='M80 90 L930 560' stroke-dasharray='1 40' stroke-width='9' stroke-opacity='.5'/%3E%3Cpath d='M520 60V680' stroke-dasharray='6 6'/%3E%3Cpath d='M520 120 L250 690 M520 120 L790 690'/%3E%3Cpath d='M470 470 l60 -40 v70z' fill='%23ffffff' fill-opacity='.35'/%3E%3Crect x='610' y='420' width='170' height='110' stroke-opacity='.8'/%3E%3Cpath d='M300 470 h400' stroke-dasharray='4 8'/%3E%3Cpath d='M690 470 l-12 -6 v12z M640 470 l-12 -6 v12z M330 175 l-13 -1 6 10z' fill='%23ffffff'/%3E%3Cpath d='M70 82 l20 16 M64 90 h32 M80 74 v32'/%3E%3C/svg%3E") center/cover no-repeat,radial-gradient(80% 60% at 50% 30%,#101114,#030304)}
+#stage.optic #pat{display:none}
+#stage.optic .surf{position:relative;background-color:rgba(10,11,13,.86);border:1px solid rgba(235,240,245,.42);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 0 0 1px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.8),0 18px 40px rgba(0,0,0,.6)}
+#stage.optic .surf::before{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.16);pointer-events:none;z-index:0;
+  background:linear-gradient(rgba(255,255,255,.07),rgba(255,255,255,0) 22%) no-repeat}
+#stage.optic .surf::after{content:"";position:absolute;inset:3px;pointer-events:none;z-index:3;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 0h40v12H12v28H0z' fill='%23c9ced4' fill-opacity='.38'/%3E%3Cpath d='M0 0h40v12H12v28H0z' fill='none' stroke='%23ffffff' stroke-opacity='.4'/%3E%3C/svg%3E") left top/30px 30px no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cg transform='rotate(90 20 20)'%3E%3Cpath d='M0 0h40v12H12v28H0z' fill='%23c9ced4' fill-opacity='.38'/%3E%3Cpath d='M0 0h40v12H12v28H0z' fill='none' stroke='%23ffffff' stroke-opacity='.4'/%3E%3C/g%3E%3C/svg%3E") right top/30px 30px no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cg transform='rotate(270 20 20)'%3E%3Cpath d='M0 0h40v12H12v28H0z' fill='%23c9ced4' fill-opacity='.38'/%3E%3Cpath d='M0 0h40v12H12v28H0z' fill='none' stroke='%23ffffff' stroke-opacity='.4'/%3E%3C/g%3E%3C/svg%3E") left bottom/30px 30px no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cg transform='rotate(180 20 20)'%3E%3Cpath d='M0 0h40v12H12v28H0z' fill='%23c9ced4' fill-opacity='.38'/%3E%3Cpath d='M0 0h40v12H12v28H0z' fill='none' stroke='%23ffffff' stroke-opacity='.4'/%3E%3C/g%3E%3C/svg%3E") right bottom/30px 30px no-repeat,
+  radial-gradient(circle at 40% 35%,#fff 0 1px,#c8ccd0 2px,#6d7276 4px,#2a2c2e 5px,transparent 6px) 14px 14px/12px 12px no-repeat,radial-gradient(circle at 40% 35%,#fff 0 1px,#c8ccd0 2px,#6d7276 4px,#2a2c2e 5px,transparent 6px) calc(100% - 14px) 14px/12px 12px no-repeat,radial-gradient(circle at 40% 35%,#fff 0 1px,#c8ccd0 2px,#6d7276 4px,#2a2c2e 5px,transparent 6px) 14px calc(100% - 14px)/12px 12px no-repeat,radial-gradient(circle at 40% 35%,#fff 0 1px,#c8ccd0 2px,#6d7276 4px,#2a2c2e 5px,transparent 6px) calc(100% - 14px) calc(100% - 14px)/12px 12px no-repeat}
+#stage.optic nav.side{padding:18px 14px}#stage.optic .head{padding:16px 22px}#stage.optic .scroll{padding:0 22px 22px}#stage.optic aside.right .surf{padding:20px}
+#stage.optic nav.side .badge,#stage.optic .band .n,#stage.flora nav.side .badge{border-radius:0;background:transparent;color:var(--text);border:1px solid currentColor;min-width:18px;height:18px;padding:0 4px;font:600 11px/16px "IBM Plex Mono",ui-monospace,monospace}
+#stage.optic .band .n{display:inline-grid;place-items:center}
+#stage.optic .titlebar{border-bottom:1px solid rgba(255,255,255,.3);background:linear-gradient(rgba(255,255,255,.08),rgba(255,255,255,0)),#08090a}
+#stage.optic .btn{border-radius:2px}
+/* Library of Lost Flowers: flat violet leaflet, white hairlines, mono specimen labels */
+#stage.flora{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 260' fill='%23ffffff'%3E%3Cg transform='translate(100 90)'%3E%3Cellipse rx='26' ry='44' cy='-46'/%3E%3Cellipse rx='26' ry='44' cy='-46' transform='rotate(72)'/%3E%3Cellipse rx='26' ry='44' cy='-46' transform='rotate(144)'/%3E%3Cellipse rx='26' ry='44' cy='-46' transform='rotate(216)'/%3E%3Cellipse rx='26' ry='44' cy='-46' transform='rotate(288)'/%3E%3C/g%3E%3Ccircle cx='100' cy='90' r='14' fill='%235b3fd9'/%3E%3Ccircle cx='100' cy='90' r='8'/%3E%3Cpath d='M98 128 C100 170 96 210 101 255 h3 C99 210 104 170 102 128z'/%3E%3C/svg%3E") right 50px bottom 30px/200px auto no-repeat,var(--bg)}
+#stage.flora #pat{display:none}
+#stage.flora .surf{box-shadow:none;border:1px solid #fff}
+#stage.flora .titlebar{border-bottom:1px solid #fff}
+#stage.flora .lbl,#stage.flora .card .meta,#stage.flora .rowi .s,#stage.flora .band .n,#stage.flora .tabs button,#stage.flora .chip,#stage.flora .seg button{font-family:"Courier Prime",ui-monospace,monospace;letter-spacing:.02em}
+#stage.flora .lbl{text-transform:uppercase}
+#stage.flora nav.side a{border-bottom:1px solid rgba(255,255,255,.35);border-radius:0}
+#stage.flora nav.side a.on{background:#fff;color:#4a2fc9}
+#stage.flora .head h1::after{content:"Your week, catalogued";display:block;font-style:italic;text-transform:none;font-size:.62em;opacity:.9}
+#stage.flora .head h1{white-space:normal}
+#stage.flora .card{box-shadow:none;border-radius:0}
+#stage.flora .band::after{background:#fff}
+#stage.flora .rowi{border-bottom:1px solid rgba(255,255,255,.55)}
+#stage.flora .btn{box-shadow:none;border-radius:0}
 </style>
 </head>
 <body>
@@ -436,7 +468,7 @@ var UI_FONTS={
  "Sans · neutral":["Inter","Geist","Manrope","DM Sans","Work Sans","IBM Plex Sans","Source Sans 3","Public Sans","Noto Sans","Figtree","Plus Jakarta Sans","Atkinson Hyperlegible","Karla","Mulish"],
  "Sans · geometric & friendly":["Outfit","Poppins","Sora","Lexend","Nunito","Quicksand","Rubik","Fredoka","Baloo 2"],
  "Sans · grotesk & tech":["Space Grotesk","Archivo","Barlow","Chivo","Exo 2","Chakra Petch","Rajdhani","Oxanium"],
- "Serif · readable":["Lora","Merriweather","Source Serif 4","Libre Baskerville","EB Garamond","Crimson Pro","Newsreader","Literata","Spectral","Fraunces"],
+ "Serif · readable":["Lora","Libre Caslon Text","Merriweather","Source Serif 4","Libre Baskerville","EB Garamond","Crimson Pro","Newsreader","Literata","Spectral","Fraunces"],
  "Mono":["IBM Plex Mono","JetBrains Mono","Geist Mono","Space Mono","Fira Code","Source Code Pro","Roboto Mono","DM Mono","Red Hat Mono","Courier Prime","Share Tech Mono","Azeret Mono"]
 };
 var DISPLAY_ONLY={
@@ -466,6 +498,7 @@ function loadFont(f){
     document.head.appendChild(l);
   })(0);
 }
+function loadItalic(f){if(!f||f==='Tahoma'||loadedFonts[f+'|i'])return;loadedFonts[f+'|i']=1;var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family='+encodeURIComponent(f).replace(/%20/g,'+')+':ital,wght@1,400;1,500;1,600&display=swap';l.onerror=function(){l.href='https://fonts.googleapis.com/css2?family='+encodeURIComponent(f).replace(/%20/g,'+')+':ital@1&display=swap';l.onerror=null};document.head.appendChild(l);}
 function ff(f){var c=fontClass(f);return f==="Tahoma"?'Tahoma,"Segoe UI",Verdana,sans-serif':'"'+f+'",'+(c==='mono'?'ui-monospace,Menlo,monospace':c==='serif'?'Georgia,serif':c==='cursive'?'cursive':'system-ui,sans-serif');}
 
 /* ---------- parameter schema ---------- */
@@ -484,12 +517,12 @@ var SCHEMA=[
  ["Interaction",[["cursor","select","Cursor",CURSORS],["selBg","color","Selection bg"],["selInk","color","Selection text"],["focus","color","Focus colour"],["focusW","range","Focus width",[1,4,1,"px"]],["focusStyle","select","Focus style",["solid","dotted","dashed"]],["scrollbar","select","Scrollbar",["win2k","thin","pill","terminal","square","chrome"]]]],
  ["Surface & Light",[["elev","range","Elevation",[0,5,1,""]],["bevel","range","Bevel",[0,1,0.05,""]],["velvet","check","Velvet (Tuxhole)"],["velvetOp","range","Velvet strength",[0,0.4,0.01,""]],
    ["sheen","check","Sheen sweep (hover)"],["sheenA","range","Sheen strength",[0,0.25,0.01,""]],["spot","check","Pointer spotlight"],["spotColor","color","Spotlight colour"],["spotA","range","Spotlight strength",[0,0.35,0.01,""]],["spotSize","range","Spotlight size",[80,600,10,"px"]],
-   ["rim","range","Fresnel rim",[0,1,0.05,""]],["tilt","check","3D tilt (hovered card)"],["tiltMax","range","Tilt max",[0,8,0.5,"°"]],["holo","range","Holo foil (hover)",[0,0.5,0.01,""]],["ring","check","Conic ring (hover)"],["glossOn","check","Gloss on buttons"],["den","check","Sound-wall kit (scaffold, cones, bear)"],["thump","check","Bass thump hover"],["leds","check","String LEDs (twinkle)"],["moon","check","Moon kit (regolith, bezel, CRT glow)"],["lasers","check","CRT laser beams (slow drift)"],["comic","check","Comic clouds along bottom"],["rainbow","check","Rainbow fabric + bunting"],["fig","check","Garden kit (mountains, lotus, gold flourishes)"]]],
+   ["rim","range","Fresnel rim",[0,1,0.05,""]],["tilt","check","3D tilt (hovered card)"],["tiltMax","range","Tilt max",[0,8,0.5,"°"]],["holo","range","Holo foil (hover)",[0,0.5,0.01,""]],["ring","check","Conic ring (hover)"],["glossOn","check","Gloss on buttons"],["den","check","Sound-wall kit (scaffold, cones, bear)"],["thump","check","Bass thump hover"],["leds","check","String LEDs (twinkle)"],["moon","check","Moon kit (regolith, bezel, CRT glow)"],["lasers","check","CRT laser beams (slow drift)"],["comic","check","Comic clouds along bottom"],["rainbow","check","Rainbow fabric + bunting"],["fig","check","Garden kit (mountains, lotus, gold flourishes)"],["optic","check","Optical bench kit (acrylic, brackets, diagram)"],["flora","check","Specimen leaflet kit (flower, mono labels)"],["italicDisplay","check","Italic display"]]],
  ["Event looks",[["eventLook","select","Handling",["as-is","tinted","overridden"]],["tint","range","Tint amount",[0,100,5,"%"]]]]
 ];
 
 /* ---------- presets ---------- */
-var BASE={velvet:false,velvetOp:0.22,fig:false,rainbow:false,lasers:false,comic:false,moon:false,leds:false,den:false,thump:false,hs:1,elev:0,bevel:0,sheen:false,sheenA:0.12,spot:false,spotColor:"#ffffff",spotA:0.12,spotSize:260,rim:0,tilt:false,tiltMax:6,holo:0,ring:false,glossOn:false,chromeOn:false,chrome1:"#f5f5f5",chrome2:"#9a9a9a",chrome3:"#6b6b6b",titlebar:"accent",fs:14,weight:400,displayWeight:700,tracking:0,upper:false,upperBtn:false,upperDisplay:false,radius:0,pill:false,avatarRound:false,borderW:1,borderStyle:"solid",gap:8,ctl:36,depth:"flat",shadow:0.3,glow:0,highlight:0,textGlow:0,glass:false,blur:0,opacity:1,saturate:100,blobs:false,blob1:"#000000",blob2:"#000000",blob3:"#000000",pattern:"none",patColor:"#000000",patOp:0.1,patSize:24,grain:0,scan:0,scanSize:2,vig:0,embers:false,flicker:false,dur:180,ease:"ease-out",lift:0,typing:false,stroke:1.7,cap:"square",cursor:"default",selBg:"#262626",selInk:"#ffffff",focus:"#000000",focusW:2,focusStyle:"solid",scrollbar:"thin",eventLook:"as-is",tint:35,
+var BASE={optic:false,flora:false,italicDisplay:false,velvet:false,velvetOp:0.22,fig:false,rainbow:false,lasers:false,comic:false,moon:false,leds:false,den:false,thump:false,hs:1,elev:0,bevel:0,sheen:false,sheenA:0.12,spot:false,spotColor:"#ffffff",spotA:0.12,spotSize:260,rim:0,tilt:false,tiltMax:6,holo:0,ring:false,glossOn:false,chromeOn:false,chrome1:"#f5f5f5",chrome2:"#9a9a9a",chrome3:"#6b6b6b",titlebar:"accent",fs:14,weight:400,displayWeight:700,tracking:0,upper:false,upperBtn:false,upperDisplay:false,radius:0,pill:false,avatarRound:false,borderW:1,borderStyle:"solid",gap:8,ctl:36,depth:"flat",shadow:0.3,glow:0,highlight:0,textGlow:0,glass:false,blur:0,opacity:1,saturate:100,blobs:false,blob1:"#000000",blob2:"#000000",blob3:"#000000",pattern:"none",patColor:"#000000",patOp:0.1,patSize:24,grain:0,scan:0,scanSize:2,vig:0,embers:false,flicker:false,dur:180,ease:"ease-out",lift:0,typing:false,stroke:1.7,cap:"square",cursor:"default",selBg:"#262626",selInk:"#ffffff",focus:"#000000",focusW:2,focusStyle:"solid",scrollbar:"thin",eventLook:"as-is",tint:35,
   bg:"#d4d0c8",surface:"#d4d0c8",surface2:"#e8e5df",line:"#c9c5bc",text:"#141414",muted:"#666666",accent:"#262626",accentInk:"#ffffff",sel:"#262626",selText:"#ffffff",fontUI:"Tahoma",fontDisplay:"Tahoma"};
 var PRESETS={
  "Win2k (current)":{elev:0,family:"Classic",titlebar:"win2k",depth:"bevel",borderW:0,shadow:0.2,dur:0,focus:"#000000",focusW:1,focusStyle:"dotted",scrollbar:"win2k",gap:6},
@@ -524,6 +557,8 @@ var PRESETS={
  "Moon Signal":{family:"Moon Signal",moon:true,bg:"#040506",surface:"#dce9f0",surface2:"#1a2126",line:"#cfe9ff",text:"#e8f3f6",muted:"#9fb3ba",accent:"#c8f7ff",accentInk:"#031014",sel:"#c8f7ff",selText:"#031014",titlebar:"ink",lasers:true,fontUI:"IBM Plex Mono",fontDisplay:"Silkscreen",weight:400,displayWeight:400,upperDisplay:true,hs:1.25,radius:22,avatarRound:true,pill:true,borderW:1,depth:"soft",shadow:0.6,glow:10,highlight:0.25,glass:true,blur:6,opacity:0.07,saturate:100,pattern:"stars",patColor:"#ffffff",patOp:0.8,patSize:160,grain:0.06,rim:0.55,elev:2,spot:true,spotColor:"#c8f7ff",spotA:0.08,spotSize:260,textGlow:0,dur:200,ease:"cubic-bezier(.2,.8,.2,1)",lift:1,stroke:1.5,cap:"round",cursor:"crosshair",scrollbar:"thin",selBg:"#c8f7ff",selInk:"#031014",focus:"#c8f7ff",gap:16},
  "End of the Rainbow":{family:"End of the Rainbow",rainbow:true,bg:"#8fd3ff",surface:"#ffffff",surface2:"#eef7ff",line:"#cfe3f5",text:"#1e2a3a",muted:"#56657a",accent:"#ff4d6d",accentInk:"#ffffff",sel:"#2f80ed",selText:"#ffffff",titlebar:"surface",fontUI:"Nunito",fontDisplay:"Bowlby One",weight:600,displayWeight:400,hs:1.2,radius:20,pill:true,avatarRound:true,borderW:0,depth:"soft",shadow:0.18,highlight:0.6,elev:2,dur:240,ease:"cubic-bezier(.34,1.56,.64,1)",lift:2,stroke:2,cap:"round",cursor:"default",scrollbar:"pill",selBg:"#ffd23f",selInk:"#1e2a3a",focus:"#2f80ed",gap:14},
  "The Final Fig":{family:"The Final Fig",fig:true,bg:"#bfe3d6",surface:"#eef8f1",surface2:"#dcefe2",line:"#c9a54a",text:"#173a2c",muted:"#4d6e5f",accent:"#e0457b",accentInk:"#ffffff",sel:"#1f5a45",selText:"#fbe9b0",titlebar:"surface",fontUI:"Nunito Sans",fontDisplay:"Cinzel Decorative",weight:500,displayWeight:700,hs:1.15,radius:14,pill:true,avatarRound:true,borderW:1,depth:"soft",shadow:0.16,glow:12,highlight:0.5,glass:true,blur:10,opacity:0.86,saturate:120,elev:2,rim:0.3,spot:true,spotColor:"#ffe08a",spotA:0.14,spotSize:300,grain:0.03,dur:300,ease:"ease-out",lift:2,stroke:1.6,cap:"round",cursor:"default",scrollbar:"pill",selBg:"#f6d27a",selInk:"#173a2c",focus:"#c9a54a",gap:16},
+ "Optical Bench":{family:"Optical Bench",optic:true,italicDisplay:true,bg:"#030304",surface:"#0c0d0f",surface2:"#16181b",line:"#9aa0a6",text:"#eef0f2",muted:"#a3a9b0",accent:"#e9ecef",accentInk:"#050505",sel:"#e9ecef",selText:"#050505",titlebar:"surface",fontUI:"IBM Plex Sans",fontDisplay:"Cormorant Garamond",weight:400,displayWeight:500,hs:1.2,radius:4,borderW:1,depth:"flat",highlight:0.12,rim:0.35,sheen:true,sheenA:0.06,spot:true,spotColor:"#ffffff",spotA:0.05,spotSize:260,dur:160,ease:"cubic-bezier(.2,.8,.2,1)",stroke:1.2,cap:"butt",cursor:"crosshair",scrollbar:"thin",selBg:"#e9ecef",selInk:"#050505",focus:"#ffffff",focusW:1,gap:18},
+ "Library of Lost Flowers":{family:"Library of Lost Flowers",flora:true,italicDisplay:false,bg:"#5b3fd9",surface:"#5b3fd9",surface2:"#6a50e0",line:"#ffffff",text:"#ffffff",muted:"#e2dcff",accent:"#ffffff",accentInk:"#4a2fc9",sel:"#ffffff",selText:"#4a2fc9",titlebar:"surface",fontUI:"Libre Caslon Text",fontDisplay:"Libre Caslon Text",weight:400,displayWeight:400,upperDisplay:true,hs:1.05,radius:0,borderW:1,depth:"flat",shadow:0,dur:120,ease:"ease-out",stroke:1.4,cap:"square",cursor:"default",scrollbar:"square",selBg:"#ffffff",selInk:"#4a2fc9",focus:"#ffffff",focusW:2,gap:12},
  "Orderland Gov":{elev:0,family:"Orderland",bg:"#f3f2f1",surface:"#ffffff",surface2:"#f3f2f1",line:"#b1b4b6",text:"#0b0c0c",muted:"#505a5f",accent:"#1d70b8",accentInk:"#ffffff",sel:"#1d70b8",selText:"#ffffff",titlebar:"ink",fontUI:"Public Sans",fontDisplay:"Public Sans",fs:15,displayWeight:700,radius:0,depth:"flat",dur:0,ease:"linear",stroke:2,cap:"round",cursor:"default",scrollbar:"thin",selBg:"#ffdd00",selInk:"#0b0c0c",focus:"#ffdd00",focusW:3,gap:12,ctl:40},
  "Orderland Finance":{elev:0,family:"Orderland",bg:"#000000",surface:"#070707",surface2:"#121212",line:"#2b2b2b",text:"#ffa028",muted:"#b98048",accent:"#ffa028",accentInk:"#000000",sel:"#1f3a5f",selText:"#ffffff",titlebar:"accent",fontUI:"Roboto Mono",fontDisplay:"Roboto Mono",fs:13,displayWeight:700,upper:true,upperBtn:true,upperDisplay:true,radius:0,depth:"flat",pattern:"grid",patColor:"#ffa028",patOp:0.035,patSize:20,dur:0,ease:"linear",stroke:1.5,cap:"butt",cursor:"crosshair",scrollbar:"square",selBg:"#4aa3ff",selInk:"#000000",focus:"#4aa3ff",gap:2,ctl:28}
 };
@@ -662,7 +697,8 @@ function apply(){
   st.classList.toggle('embers',!!T.embers&&!reduced);
   st.classList.toggle('embers-static',!!T.embers&&reduced);
   st.classList.toggle('textglow',T.textGlow>0);
-  st.classList.toggle('den',!!T.den);st.classList.toggle('moon',!!T.moon);st.classList.toggle('lasers',!!T.lasers);st.classList.toggle('comic',!!T.comic);st.classList.toggle('rainbow',!!T.rainbow);st.classList.toggle('fig',!!T.fig);
+  st.classList.toggle('den',!!T.den);st.classList.toggle('moon',!!T.moon);st.classList.toggle('lasers',!!T.lasers);st.classList.toggle('comic',!!T.comic);st.classList.toggle('rainbow',!!T.rainbow);st.classList.toggle('fig',!!T.fig);st.classList.toggle('optic',!!T.optic);st.classList.toggle('flora',!!T.flora);st.classList.toggle('ital',!!T.italicDisplay);
+  if(T.italicDisplay)loadItalic(T.fontDisplay);if(T.flora){loadFont('Courier Prime');}
   var darkT=T.glass&&T.opacity<.3?lum(T.bg)<.35:lum(T.surface)<.35;st.classList.toggle('dark-theme',darkT);document.querySelectorAll('.card').forEach(function(c){var b=c.style.getPropertyValue('--ebg').trim();c.classList.toggle('pale',/^#/.test(b)&&lum(b)>.72);});st.classList.toggle('leds',!!T.leds);st.classList.toggle('thump-on',!!T.thump&&!reduced);
   $('#logo').innerHTML=T.den?BEAR(16):'<svg width="16" height="16" viewBox="0 0 32 32"><path d="M16 4 28 16 16 28 4 16z" fill="currentColor"/></svg>';
   st.classList.toggle('sheen-on',!!T.sheen&&!reduced);st.classList.toggle('holo-on',T.holo>0&&!reduced);st.classList.toggle('ring-on',!!T.ring&&!reduced);

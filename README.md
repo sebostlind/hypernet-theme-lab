@@ -8,3 +8,4 @@ Standalone theme playground mock (no app source).
 - v5: /v5/ (Moon Signal, End of the Rainbow, polish; contact sheet: /v5/shots/contact-sheet.png)
 - v6: /v6/ (The Final Fig; contact sheet: /v6/shots/contact-sheet.png)
 - v7: /v7/ (materials removed except Tuxhole velvet; contact sheet: /v7/shots/contact-sheet.png)
+- v8: /v8/ (Optical Bench, Library of Lost Flowers; contact sheet: /v8/shots/contact-sheet.png)
