@@ -347,6 +347,96 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
 #stage.flora .band::after{background:#fff}
 #stage.flora .rowi{border-bottom:1px solid rgba(255,255,255,.55)}
 #stage.flora .btn{box-shadow:none;border-radius:0}
+
+/* ===== v9: Moon Terminal — palette sampled from the reference photo, no other hues =====
+   sky #0b0b0d · regolith #9b9da1 #888a91 #6d6f77 #53555c #3b3c42 #202025 · acrylic #f9fcf9 #e6eaec #cbd0d4 #acb1b6
+   screen #0b0b0d #2b2d33 glare #686c75 · wire #f1f7fb #e3ebf0 #ced6dd halo #a7b1b8 · pcb #151414 #1d1c1d #2c2c2e #323339 · gold #b3a88f #8f846a · silver #d2d2d2 #b0b0b1 */
+#stage.mterm{background:
+  radial-gradient(60% 9% at 22% 92%,rgba(32,32,37,.9),transparent 70%),radial-gradient(40% 6% at 78% 97%,rgba(32,32,37,.85),transparent 70%),
+  radial-gradient(30% 5% at 60% 86%,rgba(155,157,161,.35),transparent 70%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .6 0 0 0 0 .61 0 0 0 0 .63 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E") bottom/160px 160px repeat-x,
+  linear-gradient(176deg,transparent 0 72%,#202025 74%,#3b3c42 79%,#53555c 85%,#6d6f77 91%,#888a91 97%,#9b9da1),#0b0b0d}
+#stage.mterm #pat{display:none}
+#stage.mterm .titlebar{background:linear-gradient(#f9fcf9,#e6eaec 45%,#cbd0d4);color:#151414;border-bottom:1px solid #acb1b6;box-shadow:inset 0 -1px 0 #f9fcf9}
+#stage.mterm .titlebar b{font-family:var(--font-display);letter-spacing:.08em;color:#151414}
+#stage.mterm .titlebar .wb{background:#f9fcf9;color:#151414;border:1px solid #acb1b6}
+/* frosted acrylic housings (nav + right column) — dark ink on frost */
+#stage.mterm nav.side,#stage.mterm aside.right .surf{
+  --text:#151414;--muted:#53555c;--line:#acb1b6;--hover:rgba(21,20,20,.07);--surface2:#cbd0d4;
+  --accent:#151414;--accent-ink:#e3ebf0;--sel:#151414;--sel-text:#f1f7fb;--btn-bg:#f9fcf9;--field-bg:rgba(249,252,249,.85);--primary-bg:#151414;--primary-ink:#f1f7fb;--primary-border:#151414;
+  color:#151414;border:1px solid #f9fcf9;
+  background:linear-gradient(160deg,rgba(249,252,249,.97),rgba(230,234,236,.94) 40%,rgba(203,208,212,.93) 85%,rgba(172,177,182,.93));
+  box-shadow:inset 0 1px 0 #f9fcf9,inset 0 0 0 1px rgba(255,255,255,.35),inset 0 -2px 6px rgba(172,177,182,.6),0 18px 40px rgba(0,0,0,.6)}
+#stage.mterm nav.side{padding-bottom:70px;position:relative}
+#stage.mterm nav.side::after{content:"";position:absolute;left:10px;right:10px;bottom:10px;height:48px;border-radius:6px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='48'%3E%3Crect width='160' height='48' fill='%231d1c1d'/%3E%3Cg fill='none' stroke='%232c2c2e' stroke-width='1.2'%3E%3Cpath d='M0 12h30l8 8h40l6-6h76'/%3E%3Cpath d='M0 36h18l6-6h50l10 10h76'/%3E%3Cpath d='M96 0v10l6 6v32'/%3E%3Cpath d='M130 48V30l-8-8'/%3E%3C/g%3E%3Cg fill='none' stroke='%23b0b0b1' stroke-width='.6' stroke-opacity='.55'%3E%3Cpath d='M40 24h36l4 4h30'/%3E%3Cpath d='M8 44h60'/%3E%3C/g%3E%3Crect x='44' y='4' width='22' height='14' fill='%23151414' stroke='%23323339'/%3E%3Crect x='108' y='26' width='16' height='16' fill='%23151414' stroke='%23323339'/%3E%3Cg fill='%23b3a88f'%3E%3Crect x='30' y='9' width='4' height='6'/%3E%3Crect x='78' y='17' width='4' height='6'/%3E%3Crect x='14' y='33' width='4' height='6'/%3E%3Crect x='140' y='9' width='3' height='5'/%3E%3Crect x='146' y='9' width='3' height='5'/%3E%3C/g%3E%3Cg fill='%238f846a'%3E%3Crect x='46' y='19' width='2' height='3'/%3E%3Crect x='51' y='19' width='2' height='3'/%3E%3Crect x='56' y='19' width='2' height='3'/%3E%3Crect x='61' y='19' width='2' height='3'/%3E%3C/g%3E%3Cg fill='%23d2d2d2'%3E%3Ccircle cx='102' cy='16' r='1.6'/%3E%3Ccircle cx='122' cy='22' r='1.6'/%3E%3Ccircle cx='70' cy='36' r='1.4'/%3E%3Ccircle cx='152' cy='38' r='1.6'/%3E%3C/g%3E%3C/svg%3E") 0 0/160px 48px repeat-x;box-shadow:inset 0 0 0 1px #acb1b6,inset 0 0 0 3px rgba(249,252,249,.5),inset 0 0 14px rgba(11,11,13,.6);opacity:.95}
+#stage.mterm aside.right .surf:last-child{padding-bottom:66px;position:relative}
+#stage.mterm aside.right .surf:last-child::after{content:"";position:absolute;left:10px;right:10px;bottom:10px;height:42px;border-radius:6px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='48'%3E%3Crect width='160' height='48' fill='%231d1c1d'/%3E%3Cg fill='none' stroke='%232c2c2e' stroke-width='1.2'%3E%3Cpath d='M0 12h30l8 8h40l6-6h76'/%3E%3Cpath d='M0 36h18l6-6h50l10 10h76'/%3E%3Cpath d='M96 0v10l6 6v32'/%3E%3Cpath d='M130 48V30l-8-8'/%3E%3C/g%3E%3Cg fill='none' stroke='%23b0b0b1' stroke-width='.6' stroke-opacity='.55'%3E%3Cpath d='M40 24h36l4 4h30'/%3E%3Cpath d='M8 44h60'/%3E%3C/g%3E%3Crect x='44' y='4' width='22' height='14' fill='%23151414' stroke='%23323339'/%3E%3Crect x='108' y='26' width='16' height='16' fill='%23151414' stroke='%23323339'/%3E%3Cg fill='%23b3a88f'%3E%3Crect x='30' y='9' width='4' height='6'/%3E%3Crect x='78' y='17' width='4' height='6'/%3E%3Crect x='14' y='33' width='4' height='6'/%3E%3Crect x='140' y='9' width='3' height='5'/%3E%3Crect x='146' y='9' width='3' height='5'/%3E%3C/g%3E%3Cg fill='%238f846a'%3E%3Crect x='46' y='19' width='2' height='3'/%3E%3Crect x='51' y='19' width='2' height='3'/%3E%3Crect x='56' y='19' width='2' height='3'/%3E%3Crect x='61' y='19' width='2' height='3'/%3E%3C/g%3E%3Cg fill='%23d2d2d2'%3E%3Ccircle cx='102' cy='16' r='1.6'/%3E%3Ccircle cx='122' cy='22' r='1.6'/%3E%3Ccircle cx='70' cy='36' r='1.4'/%3E%3Ccircle cx='152' cy='38' r='1.6'/%3E%3C/g%3E%3C/svg%3E") -40px 0/160px 48px repeat-x;box-shadow:inset 0 0 0 1px #acb1b6,inset 0 0 14px rgba(11,11,13,.6)}
+#stage.mterm aside.right h4{color:#151414;font-family:var(--font-display);letter-spacing:.06em}
+/* centre panel = CRT screen inside a thick frosted bezel */
+#stage.mterm .main{padding:26px 26px 30px;gap:34px}
+#stage.mterm .center.surf{border:0;border-radius:30px;
+  background:var(--spot-l),radial-gradient(55% 35% at 28% 14%,rgba(104,108,117,.32),transparent 70%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='none' stroke='%23e3ebf0' stroke-width='1'%3E%3Cg transform='rotate(-28 150 110)'%3E%3Cellipse cx='150' cy='110' rx='110' ry='70'/%3E%3Cellipse cx='150' cy='110' rx='88' ry='56'/%3E%3Cellipse cx='150' cy='110' rx='66' ry='42'/%3E%3Cellipse cx='150' cy='110' rx='44' ry='28'/%3E%3Cellipse cx='150' cy='110' rx='22' ry='14'/%3E%3Cpath d='M40 110h220M150 40v140M72 60l156 100M72 160l156-100M100 47l100 126M100 173l100-126'/%3E%3C/g%3E%3Cpath d='M150 110l-62-58M150 110l-30-62' stroke-width='2'/%3E%3Ccircle cx='88' cy='52' r='5'/%3E%3Cpath d='M150 140v80M126 220h48l14 30h-76z'/%3E%3Cpath d='M126 160h48v40h-48zM132 170h36M132 180h36M132 190h36'/%3E%3Cpath d='M100 262h100M112 250h76l12 12'/%3E%3C/svg%3E") right 24px bottom 18px/260px 260px no-repeat,radial-gradient(120% 95% at 50% 45%,#2b2d33 0,#1d1c1d 45%,#0b0b0d 85%);
+  box-shadow:0 0 0 2px #0b0b0d,0 0 0 15px #cbd0d4,0 0 0 16px #acb1b6,0 0 0 17px #f9fcf9,0 22px 50px rgba(0,0,0,.7),inset 0 0 50px rgba(11,11,13,.9),inset 0 1px 0 rgba(241,247,251,.08)}
+#stage.mterm .center .band,#stage.mterm .center .tabs{background:transparent}
+#stage.mterm .center .head h1,#stage.mterm .center .band b{color:#f1f7fb;text-shadow:0 0 3px rgba(241,247,251,.8),0 0 14px rgba(167,177,184,.55)}
+#stage.mterm .center .btn.primary{box-shadow:0 0 12px rgba(227,235,240,.45)}
+#stage.mterm .center .tabs button.on{border-bottom-color:#e3ebf0;text-shadow:0 0 6px rgba(227,235,240,.5)}
+#stage.mterm .center .field{border-color:#53555c}
+#stage.mterm .dlg{border:1px solid #f9fcf9;box-shadow:0 0 0 10px #cbd0d4,0 0 0 11px #acb1b6,0 30px 60px rgba(0,0,0,.7)}
+
+/* ===== v9: Moon Cube — palette sampled from the reference photo, no other hues =====
+   sky #06090c #03080a · regolith #8896b0 #727f98 #595e6e #4a505f #353b49 #0a0f16 · frosted frame #e5eff8 #d8e2ec #d2dbe6 #c8d2dc #afb7c4
+   glass #687890 #46566d #2d3d4f window #0b131c · violet #3f206f #59328d #2c1453 buttons #603998 #502d88 inset #161024 #120c20 indicator #dfdaf4
+   moon #fdfcfa #f7f5f2 #d7d3cc #a29e96 #696765 dark #292a2d #141925 · LCD #000000 #010302 text #d3d8df */
+#stage.mcube{background:
+  radial-gradient(38% 16% at 4% 62%,#727f98 0,#595e6e 45%,transparent 72%),radial-gradient(40% 18% at 98% 66%,#727f98 0,#4a505f 50%,transparent 74%),
+  radial-gradient(22% 4% at 30% 88%,rgba(10,15,22,.85),transparent 70%),radial-gradient(14% 3% at 70% 93%,rgba(10,15,22,.85),transparent 70%),radial-gradient(20% 4% at 55% 80%,rgba(136,150,176,.55),transparent 70%),
+  linear-gradient(transparent 0 64%,#353b49 68%,#4a505f 74%,#595e6e 82%,#727f98 92%,#8896b0),
+  linear-gradient(#03080a,#06090c 60%)}
+#stage.mcube #pat{display:none}
+#stage.mcube .titlebar{background:linear-gradient(#e5eff8,#d2dbe6);color:#161024;border-bottom:4px solid #3f206f;box-shadow:inset 0 -1px 0 #59328d;position:relative}
+#stage.mcube .titlebar b{color:#161024;font-family:var(--font-display);letter-spacing:.06em}
+#stage.mcube .titlebar .wb{background:#e5eff8;color:#161024;border:1px solid #afb7c4}
+/* panels: clear blue-grey glass inside a thick frosted-white acrylic frame with a violet top strip */
+#stage.mcube .surf{position:relative;border:0;
+  background:var(--spot-l),linear-gradient(100deg,rgba(104,120,144,.18),rgba(70,86,109,.10) 30%,rgba(11,19,28,.0) 31%),linear-gradient(rgba(45,61,79,.62),rgba(11,19,28,.78));
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:inset 0 0 0 10px #d2dbe6,inset 0 0 0 11px #afb7c4,inset 0 0 0 12px rgba(229,239,248,.5),inset 12px 0 18px -6px rgba(104,120,144,.5),0 0 0 1px #e5eff8,0 16px 36px rgba(0,0,0,.6)}
+#stage.mcube .surf::before{content:"";position:absolute;left:12px;right:12px;top:12px;height:7px;pointer-events:none;z-index:2;
+  background:linear-gradient(#dfdaf4,#dfdaf4) 4px 2px/8px 3px no-repeat,linear-gradient(#59328d,#3f206f 60%,#2c1453)}
+#stage.mcube .surf::after{content:"";position:absolute;left:14px;right:14px;bottom:1px;height:9px;pointer-events:none;z-index:2;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='18'%3E%3Crect width='44' height='18' rx='1.5' fill='%23603998'/%3E%3Crect x='0' y='0' width='44' height='2' fill='%2359328d' opacity='.9'/%3E%3Crect x='6' y='5' width='32' height='9' fill='%23161024'/%3E%3Crect x='6' y='5' width='32' height='1' fill='%232c1453'/%3E%3C/svg%3E") left center/26px 9px no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='18'%3E%3Crect width='44' height='18' rx='1.5' fill='%23603998'/%3E%3Crect x='0' y='0' width='44' height='2' fill='%2359328d' opacity='.9'/%3E%3Crect x='6' y='5' width='32' height='9' fill='%23161024'/%3E%3Crect x='6' y='5' width='32' height='1' fill='%232c1453'/%3E%3C/svg%3E") right center/26px 9px no-repeat}
+#stage.mcube nav.side{padding:28px 18px 20px}
+#stage.mcube .center.surf{padding:14px 12px 12px}
+#stage.mcube aside.right .surf{padding:28px 20px 20px}
+#stage.mcube .main{padding:18px;gap:18px}
+#stage.mcube .center .head h1,#stage.mcube .center .band b,#stage.mcube aside.right h4{color:#fdfcfa;text-shadow:0 0 10px rgba(247,245,242,.25)}
+#stage.mcube .center .band,#stage.mcube .center .tabs{background:transparent}
+/* primary = violet block with black inset */
+#stage.mcube .btn.primary{background:#161024;color:#dfdaf4;border:1px solid #2c1453;box-shadow:inset 0 0 0 4px #603998,inset 0 4px 0 #59328d,0 2px 0 #2c1453}
+#stage.mcube .btn.primary:hover{box-shadow:inset 0 0 0 4px #603998,inset 0 4px 0 #59328d,0 0 12px rgba(96,57,152,.6)}
+#stage.mcube nav.side a.on{box-shadow:inset 3px 0 0 #603998}
+#stage.mcube .lbl,#stage.mcube .card .meta{font-family:"IBM Plex Mono",ui-monospace,monospace;letter-spacing:.01em}
+/* hero display cube (right column) */
+.cubehero{display:none}
+#stage.mcube .cubehero{display:block;position:relative;flex:0 0 auto;height:220px;border-radius:4px;
+  background:linear-gradient(transparent 70%,#353b49 78%,#595e6e 90%,#727f98) 0 0/100% 100% no-repeat,#0b131c;
+  box-shadow:inset 0 0 0 12px #d2dbe6,inset 0 0 0 13px #afb7c4,inset 0 0 0 14px rgba(229,239,248,.55),inset 0 -26px 0 0 #d8e2ec,inset 0 -27px 0 0 #afb7c4,0 0 0 1px #e5eff8,0 18px 40px rgba(0,0,0,.65)}
+#stage.mcube .cubehero::before{content:"";position:absolute;left:12px;right:12px;top:12px;height:8px;z-index:2;background:linear-gradient(#dfdaf4,#dfdaf4) 5px 2px/9px 4px no-repeat,linear-gradient(#59328d,#3f206f 60%,#2c1453)}
+#stage.mcube .cubehero::after{content:"";position:absolute;left:18px;right:18px;bottom:5px;height:16px;z-index:2;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='18'%3E%3Crect width='44' height='18' rx='1.5' fill='%23603998'/%3E%3Crect x='0' y='0' width='44' height='2' fill='%2359328d' opacity='.9'/%3E%3Crect x='6' y='5' width='32' height='9' fill='%23161024'/%3E%3Crect x='6' y='5' width='32' height='1' fill='%232c1453'/%3E%3C/svg%3E") left center/40px 16px no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='18'%3E%3Crect width='44' height='18' rx='1.5' fill='%23603998'/%3E%3Crect x='0' y='0' width='44' height='2' fill='%2359328d' opacity='.9'/%3E%3Crect x='6' y='5' width='32' height='9' fill='%23161024'/%3E%3Crect x='6' y='5' width='32' height='1' fill='%232c1453'/%3E%3C/svg%3E") right center/40px 16px no-repeat}
+#stage.mcube .cubehero canvas{position:absolute;left:14px;right:14px;top:20px;width:calc(100% - 28px);height:calc(100% - 47px);image-rendering:pixelated}
+#stage.mcube .cubehero i{position:absolute;left:14px;top:20px;bottom:27px;width:22px;z-index:1;background:linear-gradient(90deg,rgba(104,120,144,.55),rgba(70,86,109,.15));pointer-events:none}
+#stage.mcube .cubehero i+i{left:auto;right:14px;background:linear-gradient(270deg,rgba(104,120,144,.55),rgba(70,86,109,.15))}
+/* black LCD status bar */
+.lcdbar{display:none}
+#stage.mcube .lcdbar{display:flex;align-items:center;gap:18px;flex:0 0 auto;height:30px;padding:0 18px;background:#000;color:#d3d8df;border-top:1px solid #d2dbe6;
+  font:500 11px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.04em;box-shadow:inset 0 1px 0 #010302}
+#stage.mcube .lcdbar b{font-weight:600;font-size:12px;padding-top:6px;border-top:1px solid #d3d8df}
+#stage.mcube .lcdbar span{display:flex;align-items:center;gap:8px;opacity:.9}
+#stage.mcube .lcdbar span::before{content:"";width:46px;height:1px;background:#d3d8df;opacity:.8}
+#stage.mcube .lcdbar .sp{flex:1}#stage.mcube .lcdbar .sp::before{display:none}
 </style>
 </head>
 <body>
@@ -367,6 +457,7 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
       <div class="scroll" id="feed"></div>
     </section>
     <aside class="right">
+      <div class="cubehero" aria-hidden="true"><canvas id="moonCv"></canvas><i></i><i></i></div>
       <div class="surf">
         <h4>Call outs for you</h4>
         <div class="callout"><b>Anna</b> <span class="lbl">needs</span><div>a ride to Deep Listening, Sat</div><div style="margin-top:6px;display:flex;gap:6px"><button class="btn" style="height:28px">Reply</button><button class="btn ghost" style="height:28px">Later</button></div></div>
@@ -384,6 +475,7 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
       </div>
     </aside>
   </div>
+  <div class="lcdbar"><b>Spootlay</b><span>Display</span><span id="lcdPhase">Phase —</span><i class="sp"></i><span>Fylkingen · 3 tonight</span><span>Sat 17 Oct 20:14</span></div>
   <div class="pop" id="pop" style="right:300px;top:96px">
     <a class="on"><span data-ic="share"></span>Share</a><a><span data-ic="addhorizon"></span>Add to horizon</a><a><span data-ic="promote"></span>Promote</a><a><span data-ic="edit"></span>Edit look</a><hr><a><span data-ic="trash"></span>Delete</a>
   </div>
@@ -517,12 +609,12 @@ var SCHEMA=[
  ["Interaction",[["cursor","select","Cursor",CURSORS],["selBg","color","Selection bg"],["selInk","color","Selection text"],["focus","color","Focus colour"],["focusW","range","Focus width",[1,4,1,"px"]],["focusStyle","select","Focus style",["solid","dotted","dashed"]],["scrollbar","select","Scrollbar",["win2k","thin","pill","terminal","square","chrome"]]]],
  ["Surface & Light",[["elev","range","Elevation",[0,5,1,""]],["bevel","range","Bevel",[0,1,0.05,""]],["velvet","check","Velvet (Tuxhole)"],["velvetOp","range","Velvet strength",[0,0.4,0.01,""]],
    ["sheen","check","Sheen sweep (hover)"],["sheenA","range","Sheen strength",[0,0.25,0.01,""]],["spot","check","Pointer spotlight"],["spotColor","color","Spotlight colour"],["spotA","range","Spotlight strength",[0,0.35,0.01,""]],["spotSize","range","Spotlight size",[80,600,10,"px"]],
-   ["rim","range","Fresnel rim",[0,1,0.05,""]],["tilt","check","3D tilt (hovered card)"],["tiltMax","range","Tilt max",[0,8,0.5,"°"]],["holo","range","Holo foil (hover)",[0,0.5,0.01,""]],["ring","check","Conic ring (hover)"],["glossOn","check","Gloss on buttons"],["den","check","Sound-wall kit (scaffold, cones, bear)"],["thump","check","Bass thump hover"],["leds","check","String LEDs (twinkle)"],["moon","check","Moon kit (regolith, bezel, CRT glow)"],["lasers","check","CRT laser beams (slow drift)"],["comic","check","Comic clouds along bottom"],["rainbow","check","Rainbow fabric + bunting"],["fig","check","Garden kit (mountains, lotus, gold flourishes)"],["optic","check","Optical bench kit (acrylic, brackets, diagram)"],["flora","check","Specimen leaflet kit (flower, mono labels)"],["italicDisplay","check","Italic display"]]],
+   ["rim","range","Fresnel rim",[0,1,0.05,""]],["tilt","check","3D tilt (hovered card)"],["tiltMax","range","Tilt max",[0,8,0.5,"°"]],["holo","range","Holo foil (hover)",[0,0.5,0.01,""]],["ring","check","Conic ring (hover)"],["glossOn","check","Gloss on buttons"],["den","check","Sound-wall kit (scaffold, cones, bear)"],["thump","check","Bass thump hover"],["leds","check","String LEDs (twinkle)"],["moon","check","Moon kit (regolith, bezel, CRT glow)"],["lasers","check","CRT laser beams (slow drift)"],["comic","check","Comic clouds along bottom"],["rainbow","check","Rainbow fabric + bunting"],["fig","check","Garden kit (mountains, lotus, gold flourishes)"],["optic","check","Optical bench kit (acrylic, brackets, diagram)"],["flora","check","Specimen leaflet kit (flower, mono labels)"],["mterm","check","Moon terminal kit (frosted acrylic, CRT, PCB, regolith)"],["mcube","check","Moon cube kit (glass + frosted frame, violet, LCD bar)"],["pixelMoon","check","Pixel moon (cube display)"],["moonDot","range","Moon dot size",[2,8,1,"px"]],["moonSpeed","range","Moon drift speed",[0,3,0.1,"×"]],["italicDisplay","check","Italic display"]]],
  ["Event looks",[["eventLook","select","Handling",["as-is","tinted","overridden"]],["tint","range","Tint amount",[0,100,5,"%"]]]]
 ];
 
 /* ---------- presets ---------- */
-var BASE={optic:false,flora:false,italicDisplay:false,velvet:false,velvetOp:0.22,fig:false,rainbow:false,lasers:false,comic:false,moon:false,leds:false,den:false,thump:false,hs:1,elev:0,bevel:0,sheen:false,sheenA:0.12,spot:false,spotColor:"#ffffff",spotA:0.12,spotSize:260,rim:0,tilt:false,tiltMax:6,holo:0,ring:false,glossOn:false,chromeOn:false,chrome1:"#f5f5f5",chrome2:"#9a9a9a",chrome3:"#6b6b6b",titlebar:"accent",fs:14,weight:400,displayWeight:700,tracking:0,upper:false,upperBtn:false,upperDisplay:false,radius:0,pill:false,avatarRound:false,borderW:1,borderStyle:"solid",gap:8,ctl:36,depth:"flat",shadow:0.3,glow:0,highlight:0,textGlow:0,glass:false,blur:0,opacity:1,saturate:100,blobs:false,blob1:"#000000",blob2:"#000000",blob3:"#000000",pattern:"none",patColor:"#000000",patOp:0.1,patSize:24,grain:0,scan:0,scanSize:2,vig:0,embers:false,flicker:false,dur:180,ease:"ease-out",lift:0,typing:false,stroke:1.7,cap:"square",cursor:"default",selBg:"#262626",selInk:"#ffffff",focus:"#000000",focusW:2,focusStyle:"solid",scrollbar:"thin",eventLook:"as-is",tint:35,
+var BASE={mcube:false,pixelMoon:false,moonDot:3,moonSpeed:1,mterm:false,optic:false,flora:false,italicDisplay:false,velvet:false,velvetOp:0.22,fig:false,rainbow:false,lasers:false,comic:false,moon:false,leds:false,den:false,thump:false,hs:1,elev:0,bevel:0,sheen:false,sheenA:0.12,spot:false,spotColor:"#ffffff",spotA:0.12,spotSize:260,rim:0,tilt:false,tiltMax:6,holo:0,ring:false,glossOn:false,chromeOn:false,chrome1:"#f5f5f5",chrome2:"#9a9a9a",chrome3:"#6b6b6b",titlebar:"accent",fs:14,weight:400,displayWeight:700,tracking:0,upper:false,upperBtn:false,upperDisplay:false,radius:0,pill:false,avatarRound:false,borderW:1,borderStyle:"solid",gap:8,ctl:36,depth:"flat",shadow:0.3,glow:0,highlight:0,textGlow:0,glass:false,blur:0,opacity:1,saturate:100,blobs:false,blob1:"#000000",blob2:"#000000",blob3:"#000000",pattern:"none",patColor:"#000000",patOp:0.1,patSize:24,grain:0,scan:0,scanSize:2,vig:0,embers:false,flicker:false,dur:180,ease:"ease-out",lift:0,typing:false,stroke:1.7,cap:"square",cursor:"default",selBg:"#262626",selInk:"#ffffff",focus:"#000000",focusW:2,focusStyle:"solid",scrollbar:"thin",eventLook:"as-is",tint:35,
   bg:"#d4d0c8",surface:"#d4d0c8",surface2:"#e8e5df",line:"#c9c5bc",text:"#141414",muted:"#666666",accent:"#262626",accentInk:"#ffffff",sel:"#262626",selText:"#ffffff",fontUI:"Tahoma",fontDisplay:"Tahoma"};
 var PRESETS={
  "Win2k (current)":{elev:0,family:"Classic",titlebar:"win2k",depth:"bevel",borderW:0,shadow:0.2,dur:0,focus:"#000000",focusW:1,focusStyle:"dotted",scrollbar:"win2k",gap:6},
@@ -555,6 +647,8 @@ var PRESETS={
  "LED Candy Pop":{family:"LED Candy Pop",leds:true,bg:"#0b0716",surface:"#f3ebd6",surface2:"#e6dcc2",line:"#b9a7d6",text:"#251c33",muted:"#5b4d6e",accent:"#ff2bd6",accentInk:"#ffffff",sel:"#2a1f45",selText:"#7dfcff",titlebar:"ink",fontUI:"Nunito",fontDisplay:"Permanent Marker",weight:600,displayWeight:400,radius:8,avatarRound:true,pill:true,borderW:1,depth:"glow",shadow:0.4,glow:14,blobs:true,blob1:"#7b5cff",blob2:"#19c3b0",blob3:"#c13cff",grain:0.07,vig:0.4,bevel:0.25,elev:2,rim:0.2,spot:true,spotColor:"#c9a8ff",spotA:0.14,spotSize:280,dur:220,ease:"cubic-bezier(.34,1.56,.64,1)",lift:2,stroke:1.8,cap:"round",cursor:"sparkle",scrollbar:"pill",selBg:"#ff2bd6",selInk:"#ffffff",focus:"#ff2bd6",focusW:2,gap:14},
  "Asteroid Milk":{family:"Asteroid Milk",bg:"#0b0b0d",surface:"#efe6d2",surface2:"#e4d8bd",line:"#1c1a17",text:"#1c1a17",muted:"#5a5246",accent:"#e8b23a",accentInk:"#1c1a17",sel:"#1c1a17",selText:"#efe6d2",titlebar:"accent",fontUI:"Space Grotesk",fontDisplay:"Bangers",weight:500,displayWeight:400,upperDisplay:true,tracking:0.005,hs:1.15,radius:10,avatarRound:true,pill:true,borderW:2,depth:"offset",shadow:1,comic:true,pattern:"stars",patColor:"#ffffff",patOp:0.85,patSize:140,grain:0.06,dur:140,ease:"ease-out",lift:1,stroke:2,cap:"round",cursor:"default",scrollbar:"square",selBg:"#e8b23a",selInk:"#1c1a17",focus:"#e8b23a",focusW:3,gap:12},
  "Moon Signal":{family:"Moon Signal",moon:true,bg:"#040506",surface:"#dce9f0",surface2:"#1a2126",line:"#cfe9ff",text:"#e8f3f6",muted:"#9fb3ba",accent:"#c8f7ff",accentInk:"#031014",sel:"#c8f7ff",selText:"#031014",titlebar:"ink",lasers:true,fontUI:"IBM Plex Mono",fontDisplay:"Silkscreen",weight:400,displayWeight:400,upperDisplay:true,hs:1.25,radius:22,avatarRound:true,pill:true,borderW:1,depth:"soft",shadow:0.6,glow:10,highlight:0.25,glass:true,blur:6,opacity:0.07,saturate:100,pattern:"stars",patColor:"#ffffff",patOp:0.8,patSize:160,grain:0.06,rim:0.55,elev:2,spot:true,spotColor:"#c8f7ff",spotA:0.08,spotSize:260,textGlow:0,dur:200,ease:"cubic-bezier(.2,.8,.2,1)",lift:1,stroke:1.5,cap:"round",cursor:"crosshair",scrollbar:"thin",selBg:"#c8f7ff",selInk:"#031014",focus:"#c8f7ff",gap:16},
+ "Moon Terminal":{family:"Moon Signal",mterm:true,bg:"#0b0b0d",surface:"#1d1c1d",surface2:"#2c2c2e",line:"#53555c",text:"#e3ebf0",muted:"#a7b1b8",accent:"#f1f7fb",accentInk:"#0b0b0d",sel:"#e3ebf0",selText:"#0b0b0d",titlebar:"surface",fontUI:"Geist",fontDisplay:"Share Tech Mono",weight:400,displayWeight:400,upperDisplay:true,hs:1.3,radius:14,avatarRound:true,pill:true,borderW:1,depth:"soft",shadow:0.5,highlight:0.2,grain:0.05,vig:0.25,rim:0.35,elev:2,spot:true,spotColor:"#f1f7fb",spotA:0.06,spotSize:260,dur:200,ease:"cubic-bezier(.2,.8,.2,1)",lift:1,stroke:1.3,cap:"round",cursor:"crosshair",scrollbar:"thin",selBg:"#e3ebf0",selInk:"#0b0b0d",focus:"#f1f7fb",gap:16},
+ "Moon Cube":{family:"Moon Signal",mcube:true,pixelMoon:true,moonDot:3,moonSpeed:1,bg:"#06090c",surface:"#2d3d4f",surface2:"#46566d",line:"#687890",text:"#e5eff8",muted:"#c8d2dc",accent:"#603998",accentInk:"#dfdaf4",sel:"#d8e2ec",selText:"#161024",titlebar:"surface",fontUI:"Inter",fontDisplay:"Space Mono",weight:400,displayWeight:700,upperDisplay:true,tracking:0,hs:1.15,radius:4,avatarRound:true,pill:false,borderW:1,depth:"flat",shadow:0.4,highlight:0.15,grain:0.03,vig:0.2,rim:0.25,elev:1,spot:true,spotColor:"#e5eff8",spotA:0.05,spotSize:260,dur:180,ease:"cubic-bezier(.2,.8,.2,1)",lift:1,stroke:1.4,cap:"square",cursor:"default",scrollbar:"thin",selBg:"#603998",selInk:"#fdfcfa",focus:"#59328d",focusW:2,gap:14},
  "End of the Rainbow":{family:"End of the Rainbow",rainbow:true,bg:"#8fd3ff",surface:"#ffffff",surface2:"#eef7ff",line:"#cfe3f5",text:"#1e2a3a",muted:"#56657a",accent:"#ff4d6d",accentInk:"#ffffff",sel:"#2f80ed",selText:"#ffffff",titlebar:"surface",fontUI:"Nunito",fontDisplay:"Bowlby One",weight:600,displayWeight:400,hs:1.2,radius:20,pill:true,avatarRound:true,borderW:0,depth:"soft",shadow:0.18,highlight:0.6,elev:2,dur:240,ease:"cubic-bezier(.34,1.56,.64,1)",lift:2,stroke:2,cap:"round",cursor:"default",scrollbar:"pill",selBg:"#ffd23f",selInk:"#1e2a3a",focus:"#2f80ed",gap:14},
  "The Final Fig":{family:"The Final Fig",fig:true,bg:"#bfe3d6",surface:"#eef8f1",surface2:"#dcefe2",line:"#c9a54a",text:"#173a2c",muted:"#4d6e5f",accent:"#e0457b",accentInk:"#ffffff",sel:"#1f5a45",selText:"#fbe9b0",titlebar:"surface",fontUI:"Nunito Sans",fontDisplay:"Cinzel Decorative",weight:500,displayWeight:700,hs:1.15,radius:14,pill:true,avatarRound:true,borderW:1,depth:"soft",shadow:0.16,glow:12,highlight:0.5,glass:true,blur:10,opacity:0.86,saturate:120,elev:2,rim:0.3,spot:true,spotColor:"#ffe08a",spotA:0.14,spotSize:300,grain:0.03,dur:300,ease:"ease-out",lift:2,stroke:1.6,cap:"round",cursor:"default",scrollbar:"pill",selBg:"#f6d27a",selInk:"#173a2c",focus:"#c9a54a",gap:16},
  "Optical Bench":{family:"Optical Bench",optic:true,italicDisplay:true,bg:"#030304",surface:"#0c0d0f",surface2:"#16181b",line:"#9aa0a6",text:"#eef0f2",muted:"#a3a9b0",accent:"#e9ecef",accentInk:"#050505",sel:"#e9ecef",selText:"#050505",titlebar:"surface",fontUI:"IBM Plex Sans",fontDisplay:"Cormorant Garamond",weight:400,displayWeight:500,hs:1.2,radius:4,borderW:1,depth:"flat",highlight:0.12,rim:0.35,sheen:true,sheenA:0.06,spot:true,spotColor:"#ffffff",spotA:0.05,spotSize:260,dur:160,ease:"cubic-bezier(.2,.8,.2,1)",stroke:1.2,cap:"butt",cursor:"crosshair",scrollbar:"thin",selBg:"#e9ecef",selInk:"#050505",focus:"#ffffff",focusW:1,gap:18},
@@ -686,6 +780,38 @@ function lightInit(){
   st.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;LIGHT.ev=e;if(!LIGHT.raf)LIGHT.raf=requestAnimationFrame(lightFrame);},{passive:true});
   st.addEventListener('pointerleave',function(){LIGHT.ev={target:null,clientX:0,clientY:0};lightFrame();});
 }
+
+/* ---------- Pixel moon: LED dot-grid sphere with craters + terminator, palette sampled from the photo ---------- */
+var MOON={raf:0,t0:0,last:0,phase:0,pal:[[20,25,37],[41,42,45],[105,103,101],[162,158,150],[215,211,204],[247,245,242],[253,252,250]],
+ craters:[[.35,.25,.22,.5],[-.2,.45,.16,.55],[.9,-.15,.28,.45],[1.6,.3,.2,.5],[2.3,-.35,.25,.5],[2.9,.1,.18,.6],[-.9,-.4,.24,.45],[-1.6,.2,.3,.5],[.1,-.55,.12,.6],[1.2,.6,.14,.55],[-2.4,-.1,.22,.5],[.6,.05,.08,.7],[2.0,.5,.1,.6],[-.5,.1,.1,.65]]};
+function moonCol(v){var p=MOON.pal,x=Math.max(0,Math.min(.9999,v))*(p.length-1),i=Math.floor(x),f=x-i,a=p[i],b=p[i+1];return 'rgb('+Math.round(a[0]+(b[0]-a[0])*f)+','+Math.round(a[1]+(b[1]-a[1])*f)+','+Math.round(a[2]+(b[2]-a[2])*f)+')';}
+function moonDraw(t){
+  var cv=document.getElementById('moonCv');if(!cv)return;var w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;
+  var d=T.moonDot||3;if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}
+  var c=cv.getContext('2d');c.clearRect(0,0,w,h);
+  var R=Math.min(w,h)*.42,cx=w/2,cy=h*.48,sp=T.moonSpeed||0,rot=t*0.00004*sp,ph=1.05+Math.sin(t*0.000025*sp)*.35;
+  var lx=Math.sin(ph),lz=Math.cos(ph),ly=-.12,ln=Math.hypot(lx,ly,lz);lx/=ln;ly/=ln;lz/=ln;
+  MOON.phase=ph;var gap=d>=3?1:0;
+  var g=c.createRadialGradient(cx,cy,R*.8,cx,cy,R*1.35);g.addColorStop(0,'rgba(247,245,242,.16)');g.addColorStop(1,'rgba(247,245,242,0)');c.fillStyle=g;c.fillRect(0,0,w,h);
+  for(var y=cy-R;y<=cy+R;y+=d)for(var x=cx-R;x<=cx+R;x+=d){
+    var nx=(x+d/2-cx)/R,ny=(y+d/2-cy)/R,r2=nx*nx+ny*ny;if(r2>1)continue;var nz=Math.sqrt(1-r2);
+    var lon=Math.atan2(nx,nz)+rot,lat=Math.asin(ny),alb=1;
+    for(var k=0;k<MOON.craters.length;k++){var cr=MOON.craters[k],dl=Math.atan2(Math.sin(lon-cr[0]),Math.cos(lon-cr[0])),dd=Math.hypot(dl*Math.cos(lat),lat-cr[1]);
+      if(dd<cr[2])alb-=cr[3]*Math.min(1,(1-dd/cr[2])*2.2);else if(dd<cr[2]*1.18)alb+=.1;}
+    alb+=(Math.sin(lon*23+lat*17)+Math.sin(lon*41-lat*29)+Math.sin(lon*67+lat*53))*.035;
+    var lit=nx*lx+ny*ly+nz*lz,v;
+    if(lit>0){v=Math.min(1,Math.pow(lit,.35)*1.08)*Math.max(.18,alb);if(lit<.12)v*=lit/.12*.7+.3;}
+    else v=.03+((Math.sin(lon*13+lat*7)+1)*.025);
+    c.fillStyle=moonCol(v);c.fillRect(Math.round(x),Math.round(y),d-gap,d-gap);}
+  var ph2=document.getElementById('lcdPhase');if(ph2)ph2.textContent='Phase '+(ph).toFixed(2);
+}
+function moonLoop(t){MOON.raf=0;if(!(T.mcube&&T.pixelMoon))return;if(t-MOON.last>66){MOON.last=t;moonDraw(t);}MOON.raf=requestAnimationFrame(moonLoop);}
+function moonSet(){
+  var cv=document.getElementById('moonCv');if(!cv)return;cv.style.display=(T.mcube&&T.pixelMoon)?'block':'none';
+  if(MOON.raf){cancelAnimationFrame(MOON.raf);MOON.raf=0;}
+  if(!(T.mcube&&T.pixelMoon))return;
+  clearTimeout(MOON.to);MOON.to=setTimeout(function(){if(MOON.raf)cancelAnimationFrame(MOON.raf);moonDraw(reduced||!T.moonSpeed?0:performance.now());if(!reduced&&T.moonSpeed>0)MOON.raf=requestAnimationFrame(moonLoop);},30);
+}
 function apply(){
   var st=$('#stage'),k=tokens(T);
   loadFont(T.fontUI);loadFont(T.fontDisplay);
@@ -697,7 +823,7 @@ function apply(){
   st.classList.toggle('embers',!!T.embers&&!reduced);
   st.classList.toggle('embers-static',!!T.embers&&reduced);
   st.classList.toggle('textglow',T.textGlow>0);
-  st.classList.toggle('den',!!T.den);st.classList.toggle('moon',!!T.moon);st.classList.toggle('lasers',!!T.lasers);st.classList.toggle('comic',!!T.comic);st.classList.toggle('rainbow',!!T.rainbow);st.classList.toggle('fig',!!T.fig);st.classList.toggle('optic',!!T.optic);st.classList.toggle('flora',!!T.flora);st.classList.toggle('ital',!!T.italicDisplay);
+  st.classList.toggle('den',!!T.den);st.classList.toggle('moon',!!T.moon);st.classList.toggle('lasers',!!T.lasers);st.classList.toggle('comic',!!T.comic);st.classList.toggle('rainbow',!!T.rainbow);st.classList.toggle('fig',!!T.fig);st.classList.toggle('optic',!!T.optic);st.classList.toggle('flora',!!T.flora);st.classList.toggle('mterm',!!T.mterm);st.classList.toggle('mcube',!!T.mcube);if(T.mcube)loadFont('IBM Plex Mono');moonSet();st.classList.toggle('ital',!!T.italicDisplay);
   if(T.italicDisplay)loadItalic(T.fontDisplay);if(T.flora){loadFont('Courier Prime');}
   var darkT=T.glass&&T.opacity<.3?lum(T.bg)<.35:lum(T.surface)<.35;st.classList.toggle('dark-theme',darkT);document.querySelectorAll('.card').forEach(function(c){var b=c.style.getPropertyValue('--ebg').trim();c.classList.toggle('pale',/^#/.test(b)&&lum(b)>.72);});st.classList.toggle('leds',!!T.leds);st.classList.toggle('thump-on',!!T.thump&&!reduced);
   $('#logo').innerHTML=T.den?BEAR(16):'<svg width="16" height="16" viewBox="0 0 32 32"><path d="M16 4 28 16 16 28 4 16z" fill="currentColor"/></svg>';
