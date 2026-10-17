@@ -377,7 +377,7 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
 /* centre panel = CRT screen inside a thick frosted bezel */
 #stage.mterm .main{padding:26px 26px 30px;gap:34px}
 #stage.mterm .center.surf{border:0;border-radius:30px;
-  background:var(--spot-l),radial-gradient(55% 35% at 28% 14%,rgba(104,108,117,.32),transparent 70%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='none' stroke='%23e3ebf0' stroke-width='1'%3E%3Cg transform='rotate(-28 150 110)'%3E%3Cellipse cx='150' cy='110' rx='110' ry='70'/%3E%3Cellipse cx='150' cy='110' rx='88' ry='56'/%3E%3Cellipse cx='150' cy='110' rx='66' ry='42'/%3E%3Cellipse cx='150' cy='110' rx='44' ry='28'/%3E%3Cellipse cx='150' cy='110' rx='22' ry='14'/%3E%3Cpath d='M40 110h220M150 40v140M72 60l156 100M72 160l156-100M100 47l100 126M100 173l100-126'/%3E%3C/g%3E%3Cpath d='M150 110l-62-58M150 110l-30-62' stroke-width='2'/%3E%3Ccircle cx='88' cy='52' r='5'/%3E%3Cpath d='M150 140v80M126 220h48l14 30h-76z'/%3E%3Cpath d='M126 160h48v40h-48zM132 170h36M132 180h36M132 190h36'/%3E%3Cpath d='M100 262h100M112 250h76l12 12'/%3E%3C/svg%3E") right 24px bottom 18px/260px 260px no-repeat,radial-gradient(120% 95% at 50% 45%,#2b2d33 0,#1d1c1d 45%,#0b0b0d 85%);
+  background:var(--spot-l),radial-gradient(55% 35% at 28% 14%,rgba(104,108,117,.32),transparent 70%),radial-gradient(120% 95% at 50% 45%,#2b2d33 0,#1d1c1d 45%,#0b0b0d 85%);
   box-shadow:0 0 0 2px #0b0b0d,0 0 0 15px #cbd0d4,0 0 0 16px #acb1b6,0 0 0 17px #f9fcf9,0 22px 50px rgba(0,0,0,.7),inset 0 0 50px rgba(11,11,13,.9),inset 0 1px 0 rgba(241,247,251,.08)}
 #stage.mterm .center .band,#stage.mterm .center .tabs{background:transparent}
 #stage.mterm .center .head h1,#stage.mterm .center .band b{color:#f1f7fb;text-shadow:0 0 3px rgba(241,247,251,.8),0 0 14px rgba(167,177,184,.55)}
@@ -437,6 +437,24 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
 #stage.mcube .lcdbar span{display:flex;align-items:center;gap:8px;opacity:.9}
 #stage.mcube .lcdbar span::before{content:"";width:46px;height:1px;background:#d3d8df;opacity:.8}
 #stage.mcube .lcdbar .sp{flex:1}#stage.mcube .lcdbar .sp::before{display:none}
+
+/* ===== v10: Moon Terminal hero CRT with a live 3D wireframe dish (sampled palette only) ===== */
+.dishhero{display:none}
+#stage.mterm.wiredish .dishhero{display:block;position:relative;flex:0 0 auto;height:236px;border-radius:26px;
+  background:linear-gradient(160deg,#f9fcf9,#e6eaec 35%,#cbd0d4 75%,#acb1b6);
+  box-shadow:inset 0 1px 0 #f9fcf9,inset 0 -2px 6px rgba(172,177,182,.8),0 0 0 1px #acb1b6,0 18px 40px rgba(0,0,0,.65)}
+#stage.mterm .dishhero .scr{position:absolute;inset:16px 16px 30px;border-radius:22px/26px;overflow:hidden;
+  background:radial-gradient(120% 100% at 50% 45%,#2b2d33 0,#1d1c1d 40%,#0b0b0d 78%);
+  box-shadow:0 0 0 2px #0b0b0d,0 0 0 3px #acb1b6,inset 0 0 26px 6px rgba(11,11,13,.95),inset 0 0 4px 1px #0b0b0d}
+#stage.mterm .dishhero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#stage.mterm .dishhero .scr::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:radial-gradient(70% 38% at 30% 6%,rgba(249,252,249,.20),rgba(249,252,249,.05) 55%,transparent 72%),
+  radial-gradient(130% 120% at 50% 50%,transparent 62%,rgba(104,108,117,.10) 74%,transparent 80%),
+  linear-gradient(115deg,transparent 58%,rgba(249,252,249,.05) 64%,transparent 70%)}
+#stage.mterm .dishhero b{position:absolute;left:24px;bottom:8px;font:500 10px/14px "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.12em;color:#53555c;text-transform:uppercase}
+#stage.mterm .dishhero b:last-of-type{left:auto;right:24px}
+#stage.mterm .dishhero i{position:absolute;right:62px;bottom:12px;width:6px;height:6px;border-radius:50%;background:#f1f7fb;box-shadow:0 0 6px #a7b1b8}
+#stage.mterm #logo canvas{display:block}
 </style>
 </head>
 <body>
@@ -457,6 +475,7 @@ aside.right h4{margin:0 0 8px;font-family:var(--font-display);font-weight:var(--
       <div class="scroll" id="feed"></div>
     </section>
     <aside class="right">
+      <div class="dishhero" aria-hidden="true"><div class="scr"><canvas id="dishCv"></canvas></div><b><span id="dishAz">Az 0°</span></b><i></i><b>Link</b></div>
       <div class="cubehero" aria-hidden="true"><canvas id="moonCv"></canvas><i></i><i></i></div>
       <div class="surf">
         <h4>Call outs for you</h4>
@@ -609,12 +628,12 @@ var SCHEMA=[
  ["Interaction",[["cursor","select","Cursor",CURSORS],["selBg","color","Selection bg"],["selInk","color","Selection text"],["focus","color","Focus colour"],["focusW","range","Focus width",[1,4,1,"px"]],["focusStyle","select","Focus style",["solid","dotted","dashed"]],["scrollbar","select","Scrollbar",["win2k","thin","pill","terminal","square","chrome"]]]],
  ["Surface & Light",[["elev","range","Elevation",[0,5,1,""]],["bevel","range","Bevel",[0,1,0.05,""]],["velvet","check","Velvet (Tuxhole)"],["velvetOp","range","Velvet strength",[0,0.4,0.01,""]],
    ["sheen","check","Sheen sweep (hover)"],["sheenA","range","Sheen strength",[0,0.25,0.01,""]],["spot","check","Pointer spotlight"],["spotColor","color","Spotlight colour"],["spotA","range","Spotlight strength",[0,0.35,0.01,""]],["spotSize","range","Spotlight size",[80,600,10,"px"]],
-   ["rim","range","Fresnel rim",[0,1,0.05,""]],["tilt","check","3D tilt (hovered card)"],["tiltMax","range","Tilt max",[0,8,0.5,"°"]],["holo","range","Holo foil (hover)",[0,0.5,0.01,""]],["ring","check","Conic ring (hover)"],["glossOn","check","Gloss on buttons"],["den","check","Sound-wall kit (scaffold, cones, bear)"],["thump","check","Bass thump hover"],["leds","check","String LEDs (twinkle)"],["moon","check","Moon kit (regolith, bezel, CRT glow)"],["lasers","check","CRT laser beams (slow drift)"],["comic","check","Comic clouds along bottom"],["rainbow","check","Rainbow fabric + bunting"],["fig","check","Garden kit (mountains, lotus, gold flourishes)"],["optic","check","Optical bench kit (acrylic, brackets, diagram)"],["flora","check","Specimen leaflet kit (flower, mono labels)"],["mterm","check","Moon terminal kit (frosted acrylic, CRT, PCB, regolith)"],["mcube","check","Moon cube kit (glass + frosted frame, violet, LCD bar)"],["pixelMoon","check","Pixel moon (cube display)"],["moonDot","range","Moon dot size",[2,8,1,"px"]],["moonSpeed","range","Moon drift speed",[0,3,0.1,"×"]],["italicDisplay","check","Italic display"]]],
+   ["rim","range","Fresnel rim",[0,1,0.05,""]],["tilt","check","3D tilt (hovered card)"],["tiltMax","range","Tilt max",[0,8,0.5,"°"]],["holo","range","Holo foil (hover)",[0,0.5,0.01,""]],["ring","check","Conic ring (hover)"],["glossOn","check","Gloss on buttons"],["den","check","Sound-wall kit (scaffold, cones, bear)"],["thump","check","Bass thump hover"],["leds","check","String LEDs (twinkle)"],["moon","check","Moon kit (regolith, bezel, CRT glow)"],["lasers","check","CRT laser beams (slow drift)"],["comic","check","Comic clouds along bottom"],["rainbow","check","Rainbow fabric + bunting"],["fig","check","Garden kit (mountains, lotus, gold flourishes)"],["optic","check","Optical bench kit (acrylic, brackets, diagram)"],["flora","check","Specimen leaflet kit (flower, mono labels)"],["mterm","check","Moon terminal kit (frosted acrylic, CRT, PCB, regolith)"],["wireDish","check","Wireframe dish (terminal display)"],["dishSpeed","range","Dish sweep speed",[0,3,0.1,"×"]],["dishDensity","range","Dish mesh density",[1,3,1,""]],["mcube","check","Moon cube kit (glass + frosted frame, violet, LCD bar)"],["pixelMoon","check","Pixel moon (cube display)"],["moonDot","range","Moon dot size",[2,8,1,"px"]],["moonSpeed","range","Moon drift speed",[0,3,0.1,"×"]],["italicDisplay","check","Italic display"]]],
  ["Event looks",[["eventLook","select","Handling",["as-is","tinted","overridden"]],["tint","range","Tint amount",[0,100,5,"%"]]]]
 ];
 
 /* ---------- presets ---------- */
-var BASE={mcube:false,pixelMoon:false,moonDot:3,moonSpeed:1,mterm:false,optic:false,flora:false,italicDisplay:false,velvet:false,velvetOp:0.22,fig:false,rainbow:false,lasers:false,comic:false,moon:false,leds:false,den:false,thump:false,hs:1,elev:0,bevel:0,sheen:false,sheenA:0.12,spot:false,spotColor:"#ffffff",spotA:0.12,spotSize:260,rim:0,tilt:false,tiltMax:6,holo:0,ring:false,glossOn:false,chromeOn:false,chrome1:"#f5f5f5",chrome2:"#9a9a9a",chrome3:"#6b6b6b",titlebar:"accent",fs:14,weight:400,displayWeight:700,tracking:0,upper:false,upperBtn:false,upperDisplay:false,radius:0,pill:false,avatarRound:false,borderW:1,borderStyle:"solid",gap:8,ctl:36,depth:"flat",shadow:0.3,glow:0,highlight:0,textGlow:0,glass:false,blur:0,opacity:1,saturate:100,blobs:false,blob1:"#000000",blob2:"#000000",blob3:"#000000",pattern:"none",patColor:"#000000",patOp:0.1,patSize:24,grain:0,scan:0,scanSize:2,vig:0,embers:false,flicker:false,dur:180,ease:"ease-out",lift:0,typing:false,stroke:1.7,cap:"square",cursor:"default",selBg:"#262626",selInk:"#ffffff",focus:"#000000",focusW:2,focusStyle:"solid",scrollbar:"thin",eventLook:"as-is",tint:35,
+var BASE={wireDish:false,dishSpeed:1,dishDensity:2,mcube:false,pixelMoon:false,moonDot:3,moonSpeed:1,mterm:false,optic:false,flora:false,italicDisplay:false,velvet:false,velvetOp:0.22,fig:false,rainbow:false,lasers:false,comic:false,moon:false,leds:false,den:false,thump:false,hs:1,elev:0,bevel:0,sheen:false,sheenA:0.12,spot:false,spotColor:"#ffffff",spotA:0.12,spotSize:260,rim:0,tilt:false,tiltMax:6,holo:0,ring:false,glossOn:false,chromeOn:false,chrome1:"#f5f5f5",chrome2:"#9a9a9a",chrome3:"#6b6b6b",titlebar:"accent",fs:14,weight:400,displayWeight:700,tracking:0,upper:false,upperBtn:false,upperDisplay:false,radius:0,pill:false,avatarRound:false,borderW:1,borderStyle:"solid",gap:8,ctl:36,depth:"flat",shadow:0.3,glow:0,highlight:0,textGlow:0,glass:false,blur:0,opacity:1,saturate:100,blobs:false,blob1:"#000000",blob2:"#000000",blob3:"#000000",pattern:"none",patColor:"#000000",patOp:0.1,patSize:24,grain:0,scan:0,scanSize:2,vig:0,embers:false,flicker:false,dur:180,ease:"ease-out",lift:0,typing:false,stroke:1.7,cap:"square",cursor:"default",selBg:"#262626",selInk:"#ffffff",focus:"#000000",focusW:2,focusStyle:"solid",scrollbar:"thin",eventLook:"as-is",tint:35,
   bg:"#d4d0c8",surface:"#d4d0c8",surface2:"#e8e5df",line:"#c9c5bc",text:"#141414",muted:"#666666",accent:"#262626",accentInk:"#ffffff",sel:"#262626",selText:"#ffffff",fontUI:"Tahoma",fontDisplay:"Tahoma"};
 var PRESETS={
  "Win2k (current)":{elev:0,family:"Classic",titlebar:"win2k",depth:"bevel",borderW:0,shadow:0.2,dur:0,focus:"#000000",focusW:1,focusStyle:"dotted",scrollbar:"win2k",gap:6},
@@ -647,7 +666,7 @@ var PRESETS={
  "LED Candy Pop":{family:"LED Candy Pop",leds:true,bg:"#0b0716",surface:"#f3ebd6",surface2:"#e6dcc2",line:"#b9a7d6",text:"#251c33",muted:"#5b4d6e",accent:"#ff2bd6",accentInk:"#ffffff",sel:"#2a1f45",selText:"#7dfcff",titlebar:"ink",fontUI:"Nunito",fontDisplay:"Permanent Marker",weight:600,displayWeight:400,radius:8,avatarRound:true,pill:true,borderW:1,depth:"glow",shadow:0.4,glow:14,blobs:true,blob1:"#7b5cff",blob2:"#19c3b0",blob3:"#c13cff",grain:0.07,vig:0.4,bevel:0.25,elev:2,rim:0.2,spot:true,spotColor:"#c9a8ff",spotA:0.14,spotSize:280,dur:220,ease:"cubic-bezier(.34,1.56,.64,1)",lift:2,stroke:1.8,cap:"round",cursor:"sparkle",scrollbar:"pill",selBg:"#ff2bd6",selInk:"#ffffff",focus:"#ff2bd6",focusW:2,gap:14},
  "Asteroid Milk":{family:"Asteroid Milk",bg:"#0b0b0d",surface:"#efe6d2",surface2:"#e4d8bd",line:"#1c1a17",text:"#1c1a17",muted:"#5a5246",accent:"#e8b23a",accentInk:"#1c1a17",sel:"#1c1a17",selText:"#efe6d2",titlebar:"accent",fontUI:"Space Grotesk",fontDisplay:"Bangers",weight:500,displayWeight:400,upperDisplay:true,tracking:0.005,hs:1.15,radius:10,avatarRound:true,pill:true,borderW:2,depth:"offset",shadow:1,comic:true,pattern:"stars",patColor:"#ffffff",patOp:0.85,patSize:140,grain:0.06,dur:140,ease:"ease-out",lift:1,stroke:2,cap:"round",cursor:"default",scrollbar:"square",selBg:"#e8b23a",selInk:"#1c1a17",focus:"#e8b23a",focusW:3,gap:12},
  "Moon Signal":{family:"Moon Signal",moon:true,bg:"#040506",surface:"#dce9f0",surface2:"#1a2126",line:"#cfe9ff",text:"#e8f3f6",muted:"#9fb3ba",accent:"#c8f7ff",accentInk:"#031014",sel:"#c8f7ff",selText:"#031014",titlebar:"ink",lasers:true,fontUI:"IBM Plex Mono",fontDisplay:"Silkscreen",weight:400,displayWeight:400,upperDisplay:true,hs:1.25,radius:22,avatarRound:true,pill:true,borderW:1,depth:"soft",shadow:0.6,glow:10,highlight:0.25,glass:true,blur:6,opacity:0.07,saturate:100,pattern:"stars",patColor:"#ffffff",patOp:0.8,patSize:160,grain:0.06,rim:0.55,elev:2,spot:true,spotColor:"#c8f7ff",spotA:0.08,spotSize:260,textGlow:0,dur:200,ease:"cubic-bezier(.2,.8,.2,1)",lift:1,stroke:1.5,cap:"round",cursor:"crosshair",scrollbar:"thin",selBg:"#c8f7ff",selInk:"#031014",focus:"#c8f7ff",gap:16},
- "Moon Terminal":{family:"Moon Signal",mterm:true,bg:"#0b0b0d",surface:"#1d1c1d",surface2:"#2c2c2e",line:"#53555c",text:"#e3ebf0",muted:"#a7b1b8",accent:"#f1f7fb",accentInk:"#0b0b0d",sel:"#e3ebf0",selText:"#0b0b0d",titlebar:"surface",fontUI:"Geist",fontDisplay:"Share Tech Mono",weight:400,displayWeight:400,upperDisplay:true,hs:1.3,radius:14,avatarRound:true,pill:true,borderW:1,depth:"soft",shadow:0.5,highlight:0.2,grain:0.05,vig:0.25,rim:0.35,elev:2,spot:true,spotColor:"#f1f7fb",spotA:0.06,spotSize:260,dur:200,ease:"cubic-bezier(.2,.8,.2,1)",lift:1,stroke:1.3,cap:"round",cursor:"crosshair",scrollbar:"thin",selBg:"#e3ebf0",selInk:"#0b0b0d",focus:"#f1f7fb",gap:16},
+ "Moon Terminal":{family:"Moon Signal",mterm:true,wireDish:true,dishSpeed:1,dishDensity:2,bg:"#0b0b0d",surface:"#1d1c1d",surface2:"#2c2c2e",line:"#53555c",text:"#e3ebf0",muted:"#a7b1b8",accent:"#f1f7fb",accentInk:"#0b0b0d",sel:"#e3ebf0",selText:"#0b0b0d",titlebar:"surface",fontUI:"Geist",fontDisplay:"Share Tech Mono",weight:400,displayWeight:400,upperDisplay:true,hs:1.3,radius:14,avatarRound:true,pill:true,borderW:1,depth:"soft",shadow:0.5,highlight:0.2,grain:0.05,vig:0.25,rim:0.35,elev:2,spot:true,spotColor:"#f1f7fb",spotA:0.06,spotSize:260,dur:200,ease:"cubic-bezier(.2,.8,.2,1)",lift:1,stroke:1.3,cap:"round",cursor:"crosshair",scrollbar:"thin",selBg:"#e3ebf0",selInk:"#0b0b0d",focus:"#f1f7fb",gap:16},
  "Moon Cube":{family:"Moon Signal",mcube:true,pixelMoon:true,moonDot:3,moonSpeed:1,bg:"#06090c",surface:"#2d3d4f",surface2:"#46566d",line:"#687890",text:"#e5eff8",muted:"#c8d2dc",accent:"#603998",accentInk:"#dfdaf4",sel:"#d8e2ec",selText:"#161024",titlebar:"surface",fontUI:"Inter",fontDisplay:"Space Mono",weight:400,displayWeight:700,upperDisplay:true,tracking:0,hs:1.15,radius:4,avatarRound:true,pill:false,borderW:1,depth:"flat",shadow:0.4,highlight:0.15,grain:0.03,vig:0.2,rim:0.25,elev:1,spot:true,spotColor:"#e5eff8",spotA:0.05,spotSize:260,dur:180,ease:"cubic-bezier(.2,.8,.2,1)",lift:1,stroke:1.4,cap:"square",cursor:"default",scrollbar:"thin",selBg:"#603998",selInk:"#fdfcfa",focus:"#59328d",focusW:2,gap:14},
  "End of the Rainbow":{family:"End of the Rainbow",rainbow:true,bg:"#8fd3ff",surface:"#ffffff",surface2:"#eef7ff",line:"#cfe3f5",text:"#1e2a3a",muted:"#56657a",accent:"#ff4d6d",accentInk:"#ffffff",sel:"#2f80ed",selText:"#ffffff",titlebar:"surface",fontUI:"Nunito",fontDisplay:"Bowlby One",weight:600,displayWeight:400,hs:1.2,radius:20,pill:true,avatarRound:true,borderW:0,depth:"soft",shadow:0.18,highlight:0.6,elev:2,dur:240,ease:"cubic-bezier(.34,1.56,.64,1)",lift:2,stroke:2,cap:"round",cursor:"default",scrollbar:"pill",selBg:"#ffd23f",selInk:"#1e2a3a",focus:"#2f80ed",gap:14},
  "The Final Fig":{family:"The Final Fig",fig:true,bg:"#bfe3d6",surface:"#eef8f1",surface2:"#dcefe2",line:"#c9a54a",text:"#173a2c",muted:"#4d6e5f",accent:"#e0457b",accentInk:"#ffffff",sel:"#1f5a45",selText:"#fbe9b0",titlebar:"surface",fontUI:"Nunito Sans",fontDisplay:"Cinzel Decorative",weight:500,displayWeight:700,hs:1.15,radius:14,pill:true,avatarRound:true,borderW:1,depth:"soft",shadow:0.16,glow:12,highlight:0.5,glass:true,blur:10,opacity:0.86,saturate:120,elev:2,rim:0.3,spot:true,spotColor:"#ffe08a",spotA:0.14,spotSize:300,grain:0.03,dur:300,ease:"ease-out",lift:2,stroke:1.6,cap:"round",cursor:"default",scrollbar:"pill",selBg:"#f6d27a",selInk:"#173a2c",focus:"#c9a54a",gap:16},
@@ -812,6 +831,93 @@ function moonSet(){
   if(!(T.mcube&&T.pixelMoon))return;
   clearTimeout(MOON.to);MOON.to=setTimeout(function(){if(MOON.raf)cancelAnimationFrame(MOON.raf);moonDraw(reduced||!T.moonSpeed?0:performance.now());if(!reduced&&T.moonSpeed>0)MOON.raf=requestAnimationFrame(moonLoop);},30);
 }
+
+/* ---------- 3D wireframe satellite dish (Moon Terminal). Perspective-projected, glow = halo pass + core pass. ---------- */
+var DISH={raf:0,last:0,to:0};
+function dishModel(dens){
+  var rings=[8,12,14][dens-1]||12, mer=[20,28,32][dens-1]||28, R=1, f=.62, segs=[] ; // segs: [p,q,kind,n] kind 'dish' carries a surface normal
+  function P(r,a){var x=r*Math.cos(a),y=r*Math.sin(a);return [x,y,(r*r)/(4*f)];}
+  function N(r,a){var x=r*Math.cos(a),y=r*Math.sin(a),n=[-x/(2*f),-y/(2*f),1],l=Math.hypot(n[0],n[1],n[2]);return [n[0]/l,n[1]/l,n[2]/l];}
+  var am=48;
+  for(var i=1;i<=rings;i++){var r=R*i/rings;for(var j=0;j<am;j++){var a=j/am*2*Math.PI,b=(j+1)/am*2*Math.PI;segs.push([P(r,a),P(r,b),'d',N(r,(a+b)/2)]);}}
+  for(var j=0;j<mer;j++){var a=j/mer*2*Math.PI;for(var i=0;i<rings*2;i++){var r0=R*i/(rings*2),r1=R*(i+1)/(rings*2);segs.push([P(r0,a),P(r1,a),'d',N((r0+r1)/2||.01,a)]);}}
+  var rimZ=R*R/(4*f),F=[0,0,f*.98];
+  // tripod struts from rim to the feed
+  [Math.PI/2,Math.PI/2+2.094,Math.PI/2+4.189].forEach(function(a){var p=P(R*.97,a);segs.push([p,F,'s']);});
+  // feed horn (cone pointing back at dish) + subreflector disc
+  var hr=.12,hz0=f*.98,hz1=f*.78,sub=.2,subz=f*1.04,k=12;
+  for(var j=0;j<k;j++){var a=j/k*2*Math.PI,b=(j+1)/k*2*Math.PI;
+    segs.push([[hr*.45*Math.cos(a),hr*.45*Math.sin(a),hz0],[hr*.45*Math.cos(b),hr*.45*Math.sin(b),hz0],'s']);
+    segs.push([[hr*Math.cos(a),hr*Math.sin(a),hz1],[hr*Math.cos(b),hr*Math.sin(b),hz1],'s']);
+    if(j%2==0)segs.push([[hr*.45*Math.cos(a),hr*.45*Math.sin(a),hz0],[hr*Math.cos(a),hr*Math.sin(a),hz1],'s']);
+    segs.push([[sub*Math.cos(a),sub*Math.sin(a),subz],[sub*Math.cos(b),sub*Math.sin(b),subz],'s']);
+    if(j%3==0)segs.push([[sub*Math.cos(a),sub*Math.sin(a),subz],[0,0,subz+.04],'s']);}
+  segs.push([F,[0,0,subz],'s']);
+  // hub on the back of the dish
+  for(var j=0;j<k;j++){var a=j/k*2*Math.PI,b=(j+1)/k*2*Math.PI;segs.push([[.14*Math.cos(a),.14*Math.sin(a),-.05],[.14*Math.cos(b),.14*Math.sin(b),-.05],'s']);if(j%3==0)segs.push([[.14*Math.cos(a),.14*Math.sin(a),-.05],P(.14,a),'s']);}
+  return segs;
+}
+function boxSegs(c,w,h,d){var x=w/2,y=h/2,z=d/2,v=[];for(var i=0;i<8;i++)v.push([c[0]+(i&1?x:-x),c[1]+(i&2?y:-y),c[2]+(i&4?z:-z)]);
+  var e=[[0,1],[2,3],[4,5],[6,7],[0,2],[1,3],[4,6],[5,7],[0,4],[1,5],[2,6],[3,7]],o=[];e.forEach(function(p){o.push([v[p[0]],v[p[1]],'m']);});
+  // panel seams on the mount
+  o.push([[c[0]-x,c[1],c[2]-z],[c[0]+x,c[1],c[2]-z],'m']);o.push([[c[0]-x,c[1],c[2]+z],[c[0]+x,c[1],c[2]+z],'m']);return o;}
+function rotX(p,a){var c=Math.cos(a),s=Math.sin(a);return [p[0],p[1]*c-p[2]*s,p[1]*s+p[2]*c];}
+function rotY(p,a){var c=Math.cos(a),s=Math.sin(a);return [p[0]*c+p[2]*s,p[1],-p[0]*s+p[2]*c];}
+function dishRender(cv,t,opt){
+  opt=opt||{};var dpr=window.devicePixelRatio||1,w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;
+  if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);}
+  var c=cv.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,w,h);
+  var dens=opt.dens||T.dishDensity||2,key='m'+dens;if(!DISH[key])DISH[key]=dishModel(dens);
+  var sp=opt.speed!=null?opt.speed:(T.dishSpeed||0),az=opt.az!=null?opt.az:(.2+Math.sin(t*0.00035*sp)*0.61),el=opt.el!=null?opt.el:(0.36+Math.sin(t*0.00021*sp+1)*0.07);
+  var pivot=[0,.62,0],camYaw=-.55,camPitch=.28,D=4.2;
+  var S=Math.min(w,h)*(opt.scale||.7);
+  function world(p,kind){var q;
+    if(kind==='d'||kind==='s'){q=rotX(p,-el);q=[q[0]+pivot[0],q[1]+pivot[1],q[2]+pivot[2]];q=rotY([q[0],q[1],q[2]],az+Math.PI);}
+    else if(kind==='m'){q=rotY(p,az+Math.PI);}else q=p;return q;}
+  function view(q){var v=rotY(q,camYaw);v=rotX(v,camPitch);return v;}
+  function proj(v){var z=v[2]+D,k=S*1.9/z;return [w/2+v[0]*k+(opt.dx||0)*w,h*.5-v[1]*k+(opt.dy||0)*h,z];}
+  var camPos=(function(){var v=[0,0,-D];v=rotX(v,-camPitch);return rotY(v,-camYaw);})();
+  var groups={front:new Path2D(),back:new Path2D(),mech:new Path2D(),feed:new Path2D()};
+  function add(g,a,b){var A=proj(view(a)),B=proj(view(b));groups[g].moveTo(A[0],A[1]);groups[g].lineTo(B[0],B[1]);}
+  var segs=DISH[key],nrm;
+  for(var i=0;i<segs.length;i++){var sg=segs[i],a=world(sg[0],sg[2]),b=world(sg[1],sg[2]);
+    if(sg[2]==='d'){var n=rotY(rotX(sg[3],-el),az+Math.PI),m=[(a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2],vd=[camPos[0]-m[0],camPos[1]-m[1],camPos[2]-m[2]];
+      add((n[0]*vd[0]+n[1]*vd[1]+n[2]*vd[2])>0?'front':'back',a,b);}
+    else add(sg[2]==='s'?'feed':'mech',a,b);}
+  // fixed mount: yoke box (rotates in azimuth), conical pedestal, base ring + bolts
+  var mech=boxSegs([0,.5,-.08],.34,.26,.3);
+  mech.push([[-.17,.6,-.08],[-.12,.62,0],'m'],[[.17,.6,-.08],[.12,.62,0],'m']);
+  mech.forEach(function(sg){add('mech',world(sg[0],'m'),world(sg[1],'m'));});
+  var k=20,top=.09,bot=.34,yT=.37,yB=-.62;
+  for(var j=0;j<k;j++){var a=j/k*2*Math.PI,b=(j+1)/k*2*Math.PI;
+    add('mech',[top*Math.cos(a),yT,top*Math.sin(a)],[top*Math.cos(b),yT,top*Math.sin(b)]);
+    add('mech',[bot*Math.cos(a),yB,bot*Math.sin(a)],[bot*Math.cos(b),yB,bot*Math.sin(b)]);
+    add('mech',[bot*1.35*Math.cos(a),yB-.02,bot*1.35*Math.sin(a)],[bot*1.35*Math.cos(b),yB-.02,bot*1.35*Math.sin(b)]);
+    add('mech',[.2*Math.cos(a),(yT+yB)/2,.2*Math.sin(a)],[.2*Math.cos(b),(yT+yB)/2,.2*Math.sin(b)]);
+    if(j%2==0)add('mech',[top*Math.cos(a),yT,top*Math.sin(a)],[bot*Math.cos(a),yB,bot*Math.sin(a)]);
+    if(j%4==0)add('mech',[bot*Math.cos(a),yB,bot*Math.sin(a)],[bot*1.35*Math.cos(a),yB-.02,bot*1.35*Math.sin(a)]);}
+  c.lineCap='round';c.lineJoin='round';
+  var lw=opt.lw||1;
+  function pass(path,haloA,coreA,core){
+    if(!opt.noHalo){c.save();c.shadowColor='#a7b1b8';c.shadowBlur=8;c.strokeStyle='rgba(167,177,184,'+haloA+')';c.lineWidth=2.6*lw;c.stroke(path);c.restore();}
+    c.strokeStyle=core;c.globalAlpha=coreA;c.lineWidth=lw;c.stroke(path);c.globalAlpha=1;}
+  var ink=opt.color;pass(groups.back,.10,ink?.45:.35,ink||'#ced6dd');
+  pass(groups.mech,.28,.85,ink||'#e3ebf0');
+  pass(groups.front,.35,1,ink||'#f1f7fb');
+  var lw0=lw;lw=lw0*1.7;pass(groups.feed,.45,1,ink||'#f1f7fb');lw=lw0;
+  if(!opt.noHalo){var F=proj(view(world([0,0,.62*.98],'s')));var g=c.createRadialGradient(F[0],F[1],0,F[0],F[1],10);g.addColorStop(0,'rgba(241,247,251,.9)');g.addColorStop(1,'rgba(241,247,251,0)');c.fillStyle=g;c.fillRect(F[0]-10,F[1]-10,20,20);}
+  var lab=document.getElementById('dishAz');if(lab&&!opt.logo)lab.textContent='Az '+Math.round((az-.2)*57.3)+'° El '+Math.round(el*57.3)+'°';
+}
+function dishLoop(t){DISH.raf=0;if(!(T.mterm&&T.wireDish))return;if(document.hidden)return;
+  if(t-DISH.last>33){DISH.last=t;dishRender(document.getElementById('dishCv'),t,{dy:.13});}DISH.raf=requestAnimationFrame(dishLoop);}
+document.addEventListener('visibilitychange',function(){if(!document.hidden&&T.mterm&&T.wireDish&&!reduced&&T.dishSpeed>0&&!DISH.raf)DISH.raf=requestAnimationFrame(dishLoop);});
+function dishSet(){
+  if(DISH.raf){cancelAnimationFrame(DISH.raf);DISH.raf=0;}clearTimeout(DISH.to);
+  if(T.mterm){$('#logo').innerHTML='<canvas id="logoCv" style="width:22px;height:22px;margin:-4px 0"></canvas>';
+    setTimeout(function(){var lc=document.getElementById('logoCv');if(lc){dishRender(lc,0,{az:-.25,el:.45,dens:1,scale:.5,lw:.8,noHalo:true,logo:true,dy:.04,color:'#151414'});}},20);}
+  if(!(T.mterm&&T.wireDish))return;
+  DISH.to=setTimeout(function(){dishRender(document.getElementById('dishCv'),0,{speed:0,dy:.13});if(!reduced&&T.dishSpeed>0)DISH.raf=requestAnimationFrame(dishLoop);},40);
+}
 function apply(){
   var st=$('#stage'),k=tokens(T);
   loadFont(T.fontUI);loadFont(T.fontDisplay);
@@ -823,10 +929,10 @@ function apply(){
   st.classList.toggle('embers',!!T.embers&&!reduced);
   st.classList.toggle('embers-static',!!T.embers&&reduced);
   st.classList.toggle('textglow',T.textGlow>0);
-  st.classList.toggle('den',!!T.den);st.classList.toggle('moon',!!T.moon);st.classList.toggle('lasers',!!T.lasers);st.classList.toggle('comic',!!T.comic);st.classList.toggle('rainbow',!!T.rainbow);st.classList.toggle('fig',!!T.fig);st.classList.toggle('optic',!!T.optic);st.classList.toggle('flora',!!T.flora);st.classList.toggle('mterm',!!T.mterm);st.classList.toggle('mcube',!!T.mcube);if(T.mcube)loadFont('IBM Plex Mono');moonSet();st.classList.toggle('ital',!!T.italicDisplay);
+  st.classList.toggle('den',!!T.den);st.classList.toggle('moon',!!T.moon);st.classList.toggle('lasers',!!T.lasers);st.classList.toggle('comic',!!T.comic);st.classList.toggle('rainbow',!!T.rainbow);st.classList.toggle('fig',!!T.fig);st.classList.toggle('optic',!!T.optic);st.classList.toggle('flora',!!T.flora);st.classList.toggle('mterm',!!T.mterm);st.classList.toggle('mcube',!!T.mcube);st.classList.toggle('wiredish',!!T.wireDish);if(T.mcube)loadFont('IBM Plex Mono');moonSet();st.classList.toggle('ital',!!T.italicDisplay);
   if(T.italicDisplay)loadItalic(T.fontDisplay);if(T.flora){loadFont('Courier Prime');}
   var darkT=T.glass&&T.opacity<.3?lum(T.bg)<.35:lum(T.surface)<.35;st.classList.toggle('dark-theme',darkT);document.querySelectorAll('.card').forEach(function(c){var b=c.style.getPropertyValue('--ebg').trim();c.classList.toggle('pale',/^#/.test(b)&&lum(b)>.72);});st.classList.toggle('leds',!!T.leds);st.classList.toggle('thump-on',!!T.thump&&!reduced);
-  $('#logo').innerHTML=T.den?BEAR(16):'<svg width="16" height="16" viewBox="0 0 32 32"><path d="M16 4 28 16 16 28 4 16z" fill="currentColor"/></svg>';
+  $('#logo').innerHTML=T.den?BEAR(16):'<svg width="16" height="16" viewBox="0 0 32 32"><path d="M16 4 28 16 16 28 4 16z" fill="currentColor"/></svg>';dishSet();
   st.classList.toggle('sheen-on',!!T.sheen&&!reduced);st.classList.toggle('holo-on',T.holo>0&&!reduced);st.classList.toggle('ring-on',!!T.ring&&!reduced);
   st.classList.toggle('typing',!!T.typing&&!reduced);
   st.classList.remove('ev-tinted','ev-override');
